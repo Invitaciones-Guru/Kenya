@@ -9,21 +9,15 @@ setInterval(function() {
     document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
 }, 1000);
 
-// RSVP WHATSAPP DINÁMICO
+// RSVP WHATSAPP
 document.getElementById('rsvpForm').onsubmit = (e) => {
     e.preventDefault();
     const nombre = document.getElementById('guestName').value;
-    const asistencia = document.getElementById('attendance').value === "si" ? "Confirmado ✅" : "No podré asistir ❌";
+    const asistencia = document.getElementById('attendance').value === "si" ? "Confirma asistencia ✅" : "No puede asistir ❌";
     const personas = document.getElementById('numGuests').value;
     const plusOne = document.getElementById('plusOne').value;
-
-    const texto = `¡Hola! Confirmo mi RSVP:
-Nombre: ${nombre}
-Asistencia: ${asistencia}
-Personas: ${personas}
-Acompañante: ${plusOne}`;
-
-    window.open(`https://wa.me/528186694938?text=${encodeURIComponent(texto)}`, '_blank');
+    const msg = `RSVP Boda: ${nombre}\nAsistencia: ${asistencia}\nPersonas: ${personas}\nAcompañante: ${plusOne}`;
+    window.open(`https://wa.me/528186694938?text=${encodeURIComponent(msg)}`, '_blank');
 };
 
 // MÚSICA
