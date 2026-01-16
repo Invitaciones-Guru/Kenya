@@ -13,11 +13,11 @@ setInterval(function() {
 document.getElementById('rsvpForm').onsubmit = (e) => {
     e.preventDefault();
     const nombre = document.getElementById('guestName').value;
-    const asistencia = document.getElementById('attendance').value === "si" ? "Confirma asistencia ✅" : "No puede asistir ❌";
+    const asistencia = document.getElementById('attendance').value === "si" ? "Confirmado ✅" : "No podré asistir ❌";
     const personas = document.getElementById('numGuests').value;
     const plusOne = document.getElementById('plusOne').value;
-    const msg = `RSVP Boda: ${nombre}\nAsistencia: ${asistencia}\nPersonas: ${personas}\nAcompañante: ${plusOne}`;
-    window.open(`https://wa.me/528186694938?text=${encodeURIComponent(msg)}`, '_blank');
+    const texto = `RSVP Boda Camila & Diego:\n👤 Nombre: ${nombre}\n✨ Asistencia: ${asistencia}\n👥 Personas: ${personas}\n➕ Acompañante: ${plusOne}`;
+    window.open(`https://wa.me/528186694938?text=${encodeURIComponent(texto)}`, '_blank');
 };
 
 // MÚSICA
@@ -35,4 +35,4 @@ function copyText(text) {
     alert("Copiado al portapapeles");
 }
 
-AOS.init({ once: true });
+AOS.init({ once: true, duration: 1000 });
