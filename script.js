@@ -9,14 +9,20 @@ setInterval(function() {
     document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
 }, 1000);
 
-// RSVP WHATSAPP
+// RSVP WHATSAPP DINÁMICO
 document.getElementById('rsvpForm').onsubmit = (e) => {
     e.preventDefault();
     const nombre = document.getElementById('guestName').value;
     const asistencia = document.getElementById('attendance').value === "si" ? "Confirmado ✅" : "No podré asistir ❌";
     const personas = document.getElementById('numGuests').value;
     const plusOne = document.getElementById('plusOne').value;
-    const texto = `RSVP Boda Camila & Diego:\n👤 Nombre: ${nombre}\n✨ Asistencia: ${asistencia}\n👥 Personas: ${personas}\n➕ Acompañante: ${plusOne}`;
+
+    const texto = `¡Hola! Confirmo mi RSVP:
+Nombre: ${nombre}
+Asistencia: ${asistencia}
+Personas: ${personas}
+Acompañante: ${plusOne}`;
+
     window.open(`https://wa.me/528186694938?text=${encodeURIComponent(texto)}`, '_blank');
 };
 
@@ -35,4 +41,4 @@ function copyText(text) {
     alert("Copiado al portapapeles");
 }
 
-AOS.init({ once: true, duration: 1000 });
+AOS.init({ once: true });
