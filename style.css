@@ -8,76 +8,83 @@
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--white-bg); color: var(--dark-text); overflow-x: hidden; }
-.script-font { font-family: 'Alex Brush', cursive; }
 
-/* HERO ORIGINAL */
-.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('portada.jpeg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
-.hero h1 { font-size: 4.5rem; margin: 0; line-height: 1; }
-.location-top { letter-spacing: 4px; font-size: 0.7rem; margin-top: 15px; }
-
-/* PADRES Y PADRINOS */
-.parents-section { background: var(--green-forest); color: white; padding: 80px 20px; text-align: center; }
-.intro-highlight { font-size: 3rem; margin-bottom: 30px; line-height: 1.1; }
-.parents-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; opacity: 0.9; }
-.parents-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(255,255,255,0.3); padding: 30px 10px; margin-bottom: 40px; }
-.parents-grid p { font-family: 'Cormorant Garamond'; font-size: 1.2rem; margin: 5px 0; }
-.godparents-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 30px; }
-.god-item span { font-size: 0.55rem; letter-spacing: 2px; }
-.god-item p { font-family: 'Cormorant Garamond'; font-size: 1.1rem; margin: 5px 0; }
-
-/* CONTADOR */
-.countdown { display: flex; justify-content: center; gap: 10px; }
-.time-block { background: white; color: var(--green-forest); padding: 10px; min-width: 65px; border-radius: 4px; }
-.time-block span { font-size: 1.4rem; font-weight: 600; display: block; }
-.time-block small { font-size: 0.5rem; color: var(--brown-earth); }
-
-/* HISTORIA PARALLAX */
-.story-fixed-section { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; }
-.fixed-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-attachment: fixed; background-position: center; background-size: cover; z-index: -1; }
-.story-overlay-card { background: white; padding: 50px 30px; width: 85%; max-width: 480px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.story-para { font-family: 'Cormorant Garamond'; font-size: 1.25rem; line-height: 1.6; font-style: italic; }
-
-/* ITINERARIO LISTA VERTICAL */
-.itinerary-list-section { padding: 80px 20px; background: white; text-align: center; }
-.vertical-timeline { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 40px; }
-.v-step p { font-family: 'Cormorant Garamond'; font-size: 1.3rem; margin: 0; color: var(--green-forest); font-weight: 600; }
-.v-step span { font-size: 0.7rem; color: var(--brown-earth); letter-spacing: 1px; }
-.v-line { width: 1px; height: 50px; background: #ddd; }
-
-/* ITINERARIO BLOQUES GRANDES */
-.itinerary-blocks { background: var(--green-light); padding: 40px 0; }
-.info-block { background: white; margin: 20px; border-radius: 4px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.block-img img { width: 100%; height: 260px; object-fit: cover; }
-.block-content { padding: 40px 20px; text-align: center; }
-.title-imposing { font-size: 3.5rem !important; color: var(--green-forest); margin-bottom: 10px; }
-
-/* REGALOS Y ÁLBUM */
-.gifts-section { padding: 80px 20px; background: white; }
-.gift-cards-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-.gift-card-premium { background: var(--white-bg); padding: 40px; border: 1px solid #eee; width: 100%; max-width: 400px; text-align: center; }
-.album-frame { border: 1px solid #000; padding: 60px 20px; text-align: center; margin: 0 20px; background: white; }
-.qr-img { width: 140px; margin: 20px 0; border: 1px solid #eee; padding: 10px; }
-.btn-noir-minimal { display: inline-block; padding: 15px 40px; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; letter-spacing: 3px; font-weight: 600; }
-
-/* RSVP */
-.rsvp-section { padding: 80px 20px; background: var(--green-forest); }
-.rsvp-card-premium { background: white; padding: 50px 25px; border-radius: 4px; text-align: center; max-width: 450px; margin: 0 auto; }
-.rsvp-card-premium input, .rsvp-card-premium select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; background: var(--white-bg); font-family: 'Montserrat'; }
-.btn-confirm-gold { width: 100%; background: var(--green-forest); color: white; border: none; padding: 15px; letter-spacing: 2px; font-weight: 600; cursor: pointer; }
-
-/* GENERALES */
-.btn-brown { display: inline-block; background: var(--brown-earth); color: white; padding: 12px 30px; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; margin-top: 20px; border-radius: 40px; font-weight: 600; }
-.music-player { position: fixed; top: 20px; right: 20px; z-index: 1000; background: white; padding: 10px; border: 1px solid #000; cursor: pointer; font-size: 0.6rem; letter-spacing: 2px; }
-
-@media (max-width: 600px) {
-    .vertical-timeline { flex-direction: column; gap: 15px; }
-    .v-line { width: 40px; height: 1px; }
-    .intro-highlight { font-size: 2.5rem; }
-    .godparents-grid { grid-template-columns: 1fr; gap: 15px; }
+/* Se actualizó a Pinyon Script para un estilo más editorial */
+.script-font { 
+    font-family: 'Pinyon Script', cursive; 
 }
 
+/* HERO */
+.hero { 
+    height: 100vh; 
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('portada.jpeg') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+}
+.hero h1 { font-size: 5rem; margin: 0; line-height: 0.8; } /* Ajustado levemente el tamaño para esta fuente */
+
+/* SECCIÓN PADRES */
+.parents-section { background: var(--green-forest); color: white; padding: 60px 20px; text-align: center; }
+.intro { font-size: 2.5rem; margin-bottom: 20px; }
+.parents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border: 1px solid rgba(255,255,255,0.3); padding: 25px 0; margin: 30px 0; }
+.parents-grid p { font-family: 'Cormorant Garamond'; font-size: 1.2rem; margin: 5px 0; }
+.countdown { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
+.time-block { background: white; color: var(--green-forest); padding: 10px; min-width: 65px; border-radius: 4px; }
+
+/* HISTORIA IMAGEN FIJA */
+.story-fixed-section { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; }
+.fixed-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-attachment: fixed; background-position: center; background-size: cover; z-index: -1; }
+.story-overlay-card { background: white; padding: 40px 25px; width: 85%; max-width: 450px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.story-para { font-family: 'Cormorant Garamond'; font-size: 1.2rem; line-height: 1.6; font-style: italic; }
+
+/* GALERÍA */
+.gallery-section { padding: 60px 10px; text-align: center; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.gallery-item { height: 250px; overflow: hidden; border-radius: 4px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ITINERARIO LISTA */
+.itinerary-list-section { padding: 80px 20px; text-align: center; background: white; }
+.simple-list-container { max-width: 350px; margin: 40px auto; border-top: 1px solid #ddd; }
+.list-item { padding: 20px 0; border-bottom: 1px solid #ddd; }
+.list-item p { font-family: 'Cormorant Garamond'; font-size: 1.6rem; margin: 0; color: var(--green-forest); }
+.list-item span { font-size: 0.8rem; letter-spacing: 2px; color: var(--brown-earth); font-weight: 600; }
+
+/* ITINERARIO BLOQUES VISUALES */
+.itinerary-blocks { padding: 40px 0; background: var(--green-light); }
+.info-block { background: white; margin: 20px; overflow: hidden; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.block-img img { width: 100%; height: 220px; object-fit: cover; }
+.block-content { padding: 30px; text-align: center; }
+.btn-underline { display: inline-block; margin-top: 10px; color: var(--dark-text); border-bottom: 1px solid var(--brown-earth); text-decoration: none; font-size: 0.7rem; letter-spacing: 1px; font-weight: 600; }
+
+/* REGALOS Y MENSAJES */
+.gift-cards-container { display: flex; flex-direction: column; gap: 15px; padding: 20px; }
+.gift-card-premium { background: white; padding: 30px; border: 1px solid #eee; text-align: center; }
+.guestbook-section { padding: 60px 20px; background: var(--green-light); text-align: center; }
+.guestbook-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; }
+.message-card { background: white; padding: 20px; min-width: 250px; border-radius: 4px; }
+
+/* ÁLBUM */
+.album-editorial-section { padding: 60px 20px; background: white; }
+.album-layout { border: 1px solid #eee; text-align: center; padding: 40px 20px; }
+.btn-noir-minimal { display: inline-block; padding: 12px 25px; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; margin-top: 20px; }
+.qr-img { width: 120px; margin-top: 20px; }
+
+/* RSVP PREMIUM */
+.rsvp-section { padding: 80px 20px; background: var(--green-forest); }
+.rsvp-card-premium { background: white; padding: 40px 25px; border-radius: 4px; text-align: center; max-width: 450px; margin: 0 auto; }
+.rsvp-card-premium input, .rsvp-card-premium select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; background: var(--white-bg); font-family: 'Montserrat'; }
+.btn-confirm-gold { width: 100%; background: var(--green-forest); color: white; border: none; padding: 15px; letter-spacing: 2px; font-weight: 600; }
+.no-kids { font-size: 0.7rem; letter-spacing: 2px; color: var(--brown-earth); margin-top: 20px; font-weight: 600; }
+
+/* BOTONES */
+.btn-brown { display: inline-block; background: var(--brown-earth); color: white; padding: 12px 25px; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; margin-top: 20px; border-radius: 30px; }
+.btn-copy { background: transparent; border: 1px solid var(--brown-earth); color: var(--brown-earth); padding: 8px 15px; margin-top: 10px; cursor: pointer; }
+
+.music-player { position: fixed; top: 20px; right: 20px; z-index: 1000; background: white; padding: 8px 12px; border: 1px solid #000; cursor: pointer; font-size: 0.6rem; letter-spacing: 1px; }
+
 @media (min-width: 768px) {
-    .info-block { display: grid; grid-template-columns: 1fr 1fr; max-width: 900px; margin: 40px auto; align-items: center; }
+    .info-block { display: grid; grid-template-columns: 1fr 1fr; max-width: 800px; margin: 40px auto; }
     .info-block.reverse { direction: rtl; }
     .info-block.reverse .block-content { direction: ltr; }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
