@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Camila & Diego | Nuestra Boda</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="music-player" id="musicBtn" data-aos="fade-left">
+        <span id="musicText">PLAY MUSIC</span>
+    </div>
+    <audio id="weddingMusic" loop>
+        <source src="quererte.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero">
+        <div class="names-container" data-aos="zoom-out" data-aos-duration="2000">
+            <h1 class="script-font">Camila &</h1>
+            <h1 class="script-font">Diego</h1>
+            <p class="location-top">MONTERREY, NUEVO LEÓN.</p>
+        </div>
+    </header>
+
+    <section class="parents-section">
+        <div class="container" data-aos="fade-up">
+            <p class="script-font intro">Te invitamos a ser testigo de nuestra unión</p>
+            <p class="parents-label">En compañía de nuestros padres</p>
+            <div class="parents-grid">
+                <div><p>Adriana Pérez</p><p>Oscar Pérez</p></div>
+                <div><p>Karina Sánchez</p><p>Luis Sánchez</p></div>
+            </div>
+            <div id="countdown" class="countdown" data-aos="flip-up">
+                <div class="time-block"><span id="days">00</span><small>DÍAS</small></div>
+                <div class="time-block"><span id="hours">00</span><small>HRS</small></div>
+                <div class="time-block"><span id="minutes">00</span><small>MIN</small></div>
+                <div class="time-block"><span id="seconds">00</span><small>SEG</small></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-fixed-section">
+        <div class="fixed-bg" style="background-image: url('foto3.jpeg');"></div>
+        <div class="story-overlay-card" data-aos="fade-up">
+            <h2 class="script-font">Nuestra Historia</h2>
+            <p class="story-date">DESDE EL 2018</p>
+            <p class="story-para">Todo comenzó con una coincidencia y se transformó en el viaje más hermoso de nuestras vidas. Hoy, después de mil risas y momentos compartidos, decidimos unirnos para siempre.</p>
+            <p class="script-font signatory">Camila & Diego</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <p class="parents-label" style="color: var(--brown-earth); margin-bottom: 30px;">Momentos Inolvidables</p>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="zoom-in"><img src="foto1.jpeg"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="foto2.jpeg"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="foto3.jpeg"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="foto4.jpeg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="foto9.jpeg"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="portada.jpeg"></div>
+        </div>
+    </section>
+
+    <section class="itinerary-list-section">
+        <h2 class="script-font">El Gran Día</h2>
+        <div class="simple-list-container" data-aos="fade-up">
+            <div class="list-item">
+                <p>Ceremonia</p>
+                <span>3:30 PM</span>
+            </div>
+            <div class="list-item">
+                <p>Cóctel</p>
+                <span>5:00 PM</span>
+            </div>
+            <div class="list-item">
+                <p>Comida</p>
+                <span>6:30 PM</span>
+            </div>
+            <div class="list-item">
+                <p>Celebración</p>
+                <span>8:00 PM</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="itinerary-blocks">
+        <div class="info-block" data-aos="fade-up">
+            <div class="block-img"><img src="foto1.jpeg"></div>
+            <div class="block-content">
+                <h3 class="script-font">Ceremonia</h3>
+                <p>Catedral de Monterrey</p>
+                <a href="https://maps.apple/p/HwVAo-KyGK8Lg-" class="btn-underline">VER UBICACIÓN</a>
+            </div>
+        </div>
+
+        <div class="info-block reverse" data-aos="fade-up">
+            <div class="block-img"><img src="foto2.jpeg"></div>
+            <div class="block-content">
+                <h3 class="script-font">Recepción</h3>
+                <p>Quinta Las Flores</p>
+                <a href="https://maps.apple/p/jL_Eae4Bv-a7.w" class="btn-underline">VER UBICACIÓN</a>
+            </div>
+        </div>
+
+        <div class="info-block" data-aos="fade-up">
+            <div class="block-img"><img src="foto4.jpeg"></div>
+            <div class="block-content">
+                <h3 class="script-font">Dress Code</h3>
+                <p>RIGUROSO FORMAL</p>
+                <a href="https://pin.it/7Dz0k5tX2" target="_blank" class="btn-underline">VER INSPIRACIÓN</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gifts-section">
+        <h2 class="script-font">Mesa de Regalos</h2>
+        <div class="gift-cards-container">
+            <div class="gift-card-premium" data-aos="flip-left">
+                <h3 class="label-caps">TRANSFERENCIA</h3>
+                <p>Banco: Banamex</p>
+                <button class="btn-copy" onclick="copyText('0000000000000000')">COPIAR CLABE</button>
+            </div>
+            <div class="gift-card-premium" data-aos="flip-right">
+                <h3 class="label-caps">LIVERPOOL</h3>
+                <a href="#" class="btn-brown">VER MESA</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="guestbook-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="script-font">Mensajes de Cariño</h2>
+            <div class="guestbook-container">
+                <div class="message-card">
+                    <p class="message-text">"Que su amor siga creciendo cada día más."</p>
+                    <p class="message-author">- Familia Martínez</p>
+                </div>
+                <div class="message-card">
+                    <p class="message-text">"Los queremos mucho, ansiosos por el gran día."</p>
+                    <p class="message-author">- Sofía y Lucas</p>
+                </div>
+            </div>
+            <a href="https://wa.me/528186694938" class="btn-brown">ENVIAR UN MENSAJE</a>
+        </div>
+    </section>
+
+    <section class="album-editorial-section">
+        <div class="album-layout">
+            <div class="album-text" data-aos="fade-right">
+                <h2 class="album-title">Álbum de Fotos</h2>
+                <p class="album-subtitle">NUESTRA HISTORIA A TRAVÉS DE TUS OJOS</p>
+                <a href="https://photos.app.goo.gl/QChh5iwS7c75EZQu9" class="btn-noir-minimal">SUBIR FOTOS</a>
+            </div>
+            <div class="album-visual" data-aos="fade-left">
+                <div class="qr-placeholder">
+                    <img src="frame.png" alt="QR" class="qr-img">
+                    <span class="qr-label">C&D 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-section">
+        <div class="rsvp-card-premium" data-aos="fade-up">
+            <h2 class="script-font" style="font-size: 3.5rem; color: var(--green-forest);">C&D</h2>
+            <p class="rsvp-intro">CONFIRMACIÓN DE ASISTENCIA</p>
+            <form id="rsvpForm">
+                <input type="text" id="guestName" placeholder="Nombre completo" required>
+                <select id="attendance" required>
+                    <option value="" disabled selected>¿Asistirás?</option>
+                    <option value="si">Confirmado ✅</option>
+                    <option value="no">No podré asistir ❌</option>
+                </select>
+                <input type="number" id="numGuests" placeholder="Número de personas" min="1" required>
+                <select id="plusOne">
+                    <option value="No">¿Llevas acompañante? No</option>
+                    <option value="Si">¿Llevas acompañante? Sí</option>
+                </select>
+                <button type="submit" class="btn-confirm-gold">ENVIAR WHATSAPP</button>
+            </form>
+            <p class="no-kids">ADULTOS SOLAMENTE - NO NIÑOS</p>
+            <p class="rsvp-limit">Confirmar antes del 1 de enero</p>
+        </div>
+    </section>
+
+    <footer class="footer-signature">
+        <p>Elaborated by Guru</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
