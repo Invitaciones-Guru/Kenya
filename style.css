@@ -168,6 +168,23 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
     }
 }
 
+
+.timeline-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38%; /* AJUSTA ESTE NÚMERO */
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background-color: #b9b9b9;
+}
+
+
 /* --- SECCIÓN PADRINOS PRO --- */
 .godparents-grid-pro {
     display: grid;
