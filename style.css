@@ -142,27 +142,29 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 
 @media (max-width: 600px) {
 
-    .timeline:before {
-        left: 40%;  /* Mover la línea hacia la izquierda */
+    /* 1. Mover la línea vertical hacia la izquierda */
+    .timeline-line {
+        left: 35% !important;   /* AJUSTE PERFECTO para tu captura */
+        transform: translateX(-50%);
     }
 
-    .timeline-item {
-        justify-content: center;
-    }
-
-    .tl-time {
+    /* 2. Alinear horas más cerca de la línea */
+    .timeline-item .tl-time {
         text-align: right;
         margin-right: 10px;
         min-width: 70px;
     }
 
-    .tl-dot {
-        margin: 0 6px;
-    }
-
-    .tl-content {
+    /* 3. Alinear el texto hacia la izquierda desde el punto */
+    .timeline-item .tl-content {
         margin-left: 10px;
         text-align: left;
+        max-width: 55%;
+    }
+
+    /* 4. Controlar espacio del punto */
+    .timeline-item .tl-dot {
+        margin: 0 8px;
     }
 }
 
