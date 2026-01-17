@@ -28,7 +28,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--bg-cr
 .intro-text { font-size: 3.5rem; margin-bottom: 40px; }
 .section-label { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; opacity: 0.9; }
 .parents-grid { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; position: relative; }
-.parent-name { font-family: 'Cormorant Garamond'; font-size: 1.4rem; margin: 5px 0; }
+.parent-name { font-family: 'Cormorant Garamond'; font-size: 1rem; margin: 5px 0; }
 .divider-vertical { width: 1px; background: rgba(255,255,255,0.4); height: 60px; }
 .godparents-flex { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
 .gp-item { text-align: center; }
