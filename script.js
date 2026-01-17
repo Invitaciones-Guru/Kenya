@@ -1,5 +1,31 @@
+// FUNCIONALIDAD APERTURA DE SOBRE
+document.addEventListener('DOMContentLoaded', function() {
+    const openBtn = document.getElementById('open-btn');
+    const envelopeWrapper = document.getElementById('envelope-wrapper');
+    const music = document.getElementById('weddingMusic');
+    const musicBtn = document.getElementById('musicBtn');
+
+    openBtn.addEventListener('click', function() {
+        // 1. Desvanecer sobre
+        envelopeWrapper.classList.add('fade-out');
+        
+        // 2. Iniciar música automáticamente
+        music.play();
+        isPlaying = true;
+        musicBtn.innerHTML = '<div class="music-icon">⏸</div>';
+        musicBtn.classList.add('pulse-animation');
+        
+        // 3. Reiniciar AOS para que las animaciones de la invitación 
+        // comiencen justo cuando se quita el sobre
+        setTimeout(() => {
+            AOS.refresh();
+        }, 600);
+    });
+});
+
+
 // FECHA
-const weddingDate = new Date("Jan 18, 2026 15:30:00").getTime();
+const weddingDate = new Date("Jul 25, 2026 15:30:00").getTime();
 
 // COUNTDOWN
 const timer = setInterval(function() {
