@@ -141,113 +141,99 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 }
 
 /* --- ITINERARIO CENTRADO (CORRECCIÓN) --- */
+/* --- ITINERARIO CENTRADO (CORRECCIÓN) --- */
 
-/* --- ITINERARIO VERTICAL CENTRADO & LIMPIO --- */
-
+/* Contenedor principal */
 .timeline-container { 
     position: relative; 
-    max-width: 500px; 
+    max-width: 500px; /* Ancho controlado para que no se vea muy disperso */
     margin: 0 auto 60px auto; 
     padding: 20px 0;
-    text-align: center;
-    /* Asegura que el contenedor principal no exceda el ancho de pantalla */
-    width: 100%;
-    box-sizing: border-box;
+    text-align: center; /* Asegura que todo el texto se centre */
 }
 
-/* La línea va DETRÁS de todo */
+/* La línea vertical del fondo */
 .timeline-line { 
     position: absolute; 
     left: 50%; 
     top: 0; 
     bottom: 0; 
     width: 1px; 
-    background: #e0e0e0; /* Color gris suave */
+    background: #e0e0e0; /* Color suave para la línea */
     transform: translateX(-50%); 
     z-index: 0;
 }
 
+/* Cada bloque de evento (Hora + Punto + Texto) */
 .timeline-item { 
-    position: relative; 
-    z-index: 2;
     display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    margin-bottom: 50px;
-    /* Asegura que el ítem no sea más ancho que la pantalla */
-    max-width: 100%;
+    flex-direction: column; /* Esto hace que se apilen verticalmente */
+    align-items: center;    /* Esto centra los elementos horizontalmente */
+    justify-content: center;
+    margin-bottom: 50px; 
+    position: relative; 
+    z-index: 1;
 }
 
-/* HORA: Con fondo blanco para "cortar" la línea */
+/* La Hora */
 .tl-time { 
-    background: white; 
-    padding: 5px 15px; 
+    width: auto; 
+    text-align: center; 
     font-family: 'Montserrat', sans-serif; 
     font-size: 0.9rem; 
     font-weight: 600; 
     color: var(--brown-gold); 
     letter-spacing: 2px; 
-    margin-bottom: 10px;
-    display: inline-block;
+    background: white; /* Fondo blanco para tapar la línea si es necesario */
+    padding: 5px 15px;
+    margin-bottom: 15px; /* Separación con el punto */
 }
 
-/* PUNTO CENTRAL */
+/* El Punto */
 .tl-dot { 
-    width: 14px; 
-    height: 14px; 
-    background: white; 
-    border: 3px solid var(--green-forest);
+    position: relative; /* Ya no es absolute */
+    left: auto;
+    transform: none;
+    width: 12px; 
+    height: 12px; 
+    background: var(--green-forest); 
     border-radius: 50%; 
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 0 0 5px white; /* Halo blanco para separar la línea */
+    border: 3px solid white; /* Borde blanco para separarlo de la línea */
+    box-shadow: 0 0 0 1px #e0e0e0; 
+    margin-bottom: 15px; /* Separación con el texto */
 }
 
-/* CONTENIDO (TEXTO) - AQUÍ ESTÁ EL AJUSTE ANTI-DESBORDE */
+/* El Contenido (Título y Descripción) */
 .tl-content { 
-    background: white;
-    padding: 10px 15px; 
-    position: relative; 
-    z-index: 2;
-    
-    /* --- AJUSTES CLAVE PARA EVITAR DESBORDE --- */
-    width: 90%; /* Ocupa el 90% del ancho disponible, dejando márgenes */
-    max-width: 400px; /* Nunca será más ancho que esto, manteniendo el look centrado */
-    word-wrap: break-word; /* Rompe palabras largas si es necesario */
-    overflow-wrap: break-word; /* Sintaxis moderna para lo anterior */
-    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
-    margin: 0 auto; /* Centra el bloque de texto en sí mismo */
+    width: 100%; 
+    padding: 0; 
+    text-align: center; /* Fuerza el centrado del texto */
 }
 
 .tl-content h3 { 
     font-family: 'Cormorant Garamond', serif; 
-    font-size: 2rem; 
+    font-size: 2rem; /* Tamaño grande y elegante */
     margin: 0 0 5px 0; 
     color: var(--green-dark); 
     font-weight: 400;
-    line-height: 1.1; /* Mejora la lectura si el título es largo y salta de línea */
 }
 
 .tl-content p { 
-    font-size: 0.8rem; 
+    font-size: 0.85rem; 
     margin: 0; 
-    color: #888; 
-    letter-spacing: 2px;
+    color: #777; 
+    letter-spacing: 1px;
     text-transform: uppercase;
-    line-height: 1.4;
 }
 
-/* Ajuste para asegurar márgenes en celulares muy pequeños */
-@media (max-width: 400px) {
+/* Ajuste para móviles para asegurar que no se desborde */
+@media (max-width: 600px) {
     .timeline-container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .tl-content h3 {
-        font-size: 1.8rem; /* Un poco más pequeño en pantallas mini */
+        max-width: 100%;
+        padding: 0 20px;
     }
 }
+
 
 /* --- SECCIÓN PADRINOS PRO --- */
 .godparents-grid-pro {
