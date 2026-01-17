@@ -142,31 +142,29 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 
 @media (max-width: 600px) {
 
-    /* El contenedor del ítem se alinea sobre la línea central */
     .timeline-item {
         display: flex;
         justify-content: center;
-        align-items: center;
-        position: relative;
+        align-items: flex-start;
+        gap: 0;
     }
 
-    /* La hora queda a la izquierda del punto */
+    /* HORAS */
     .tl-time {
         text-align: right;
-        margin-right: 8px;
-        min-width: 70px; /* asegura que queden alineadas verticalmente */
+        margin-right: 12px;   /* ACERCA la hora a la línea */
+        min-width: 65px;      /* Ajusta columna uniforme */
     }
 
-    /* El texto queda a la derecha del punto, alineado a la izquierda */
+    /* PUNTO */
+    .tl-dot {
+        margin: 0 6px;        /* Espaciado perfecto en móvil */
+    }
+
+    /* TEXTO */
     .tl-content {
         text-align: left !important;
-        margin-left: 10px; /* separación del punto hacia el texto */
-        max-width: 55%; /* evita que se encime en la línea */
-    }
-
-    /* Opcional pero recomendado para que el punto quede perfecto */
-    .tl-dot {
-        margin: 0 8px;
-        z-index: 2;
+        margin-left: 6px;     /* Lo acerca al punto */
+        max-width: 48%;        /* Para que no pese visualmente */
     }
 }
