@@ -142,94 +142,110 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 
 /* --- ITINERARIO CENTRADO (CORRECCIÓN) --- */
 
-/* Contenedor principal */
+/* --- ITINERARIO VERTICAL CENTRADO & LIMPIO --- */
+
 .timeline-container { 
     position: relative; 
-    max-width: 500px; /* Ancho controlado para que no se vea muy disperso */
+    max-width: 500px; 
     margin: 0 auto 60px auto; 
     padding: 20px 0;
-    text-align: center; /* Asegura que todo el texto se centre */
+    text-align: center;
+    /* Asegura que el contenedor principal no exceda el ancho de pantalla */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* La línea vertical del fondo */
+/* La línea va DETRÁS de todo */
 .timeline-line { 
     position: absolute; 
     left: 50%; 
     top: 0; 
     bottom: 0; 
     width: 1px; 
-    background: #e0e0e0; /* Color suave para la línea */
+    background: #e0e0e0; /* Color gris suave */
     transform: translateX(-50%); 
     z-index: 0;
 }
 
-/* Cada bloque de evento (Hora + Punto + Texto) */
 .timeline-item { 
-    display: flex; 
-    flex-direction: column; /* Esto hace que se apilen verticalmente */
-    align-items: center;    /* Esto centra los elementos horizontalmente */
-    justify-content: center;
-    margin-bottom: 50px; 
     position: relative; 
-    z-index: 1;
+    z-index: 2;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 50px;
+    /* Asegura que el ítem no sea más ancho que la pantalla */
+    max-width: 100%;
 }
 
-/* La Hora */
+/* HORA: Con fondo blanco para "cortar" la línea */
 .tl-time { 
-    width: auto; 
-    text-align: center; 
+    background: white; 
+    padding: 5px 15px; 
     font-family: 'Montserrat', sans-serif; 
     font-size: 0.9rem; 
     font-weight: 600; 
     color: var(--brown-gold); 
     letter-spacing: 2px; 
-    background: white; /* Fondo blanco para tapar la línea si es necesario */
-    padding: 5px 15px;
-    margin-bottom: 15px; /* Separación con el punto */
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
-/* El Punto */
+/* PUNTO CENTRAL */
 .tl-dot { 
-    position: relative; /* Ya no es absolute */
-    left: auto;
-    transform: none;
-    width: 12px; 
-    height: 12px; 
-    background: var(--green-forest); 
+    width: 14px; 
+    height: 14px; 
+    background: white; 
+    border: 3px solid var(--green-forest);
     border-radius: 50%; 
-    border: 3px solid white; /* Borde blanco para separarlo de la línea */
-    box-shadow: 0 0 0 1px #e0e0e0; 
-    margin-bottom: 15px; /* Separación con el texto */
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 5px white; /* Halo blanco para separar la línea */
 }
 
-/* El Contenido (Título y Descripción) */
+/* CONTENIDO (TEXTO) - AQUÍ ESTÁ EL AJUSTE ANTI-DESBORDE */
 .tl-content { 
-    width: 100%; 
-    padding: 0; 
-    text-align: center; /* Fuerza el centrado del texto */
+    background: white;
+    padding: 10px 15px; 
+    position: relative; 
+    z-index: 2;
+    
+    /* --- AJUSTES CLAVE PARA EVITAR DESBORDE --- */
+    width: 90%; /* Ocupa el 90% del ancho disponible, dejando márgenes */
+    max-width: 400px; /* Nunca será más ancho que esto, manteniendo el look centrado */
+    word-wrap: break-word; /* Rompe palabras largas si es necesario */
+    overflow-wrap: break-word; /* Sintaxis moderna para lo anterior */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+    margin: 0 auto; /* Centra el bloque de texto en sí mismo */
 }
 
 .tl-content h3 { 
     font-family: 'Cormorant Garamond', serif; 
-    font-size: 2rem; /* Tamaño grande y elegante */
+    font-size: 2rem; 
     margin: 0 0 5px 0; 
     color: var(--green-dark); 
     font-weight: 400;
+    line-height: 1.1; /* Mejora la lectura si el título es largo y salta de línea */
 }
 
 .tl-content p { 
-    font-size: 0.85rem; 
+    font-size: 0.8rem; 
     margin: 0; 
-    color: #777; 
-    letter-spacing: 1px;
+    color: #888; 
+    letter-spacing: 2px;
     text-transform: uppercase;
+    line-height: 1.4;
 }
 
-/* Ajuste para móviles para asegurar que no se desborde */
-@media (max-width: 600px) {
+/* Ajuste para asegurar márgenes en celulares muy pequeños */
+@media (max-width: 400px) {
     .timeline-container {
-        max-width: 100%;
-        padding: 0 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .tl-content h3 {
+        font-size: 1.8rem; /* Un poco más pequeño en pantallas mini */
     }
 }
 
