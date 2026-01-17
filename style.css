@@ -142,30 +142,27 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 
 @media (max-width: 600px) {
 
-    .timeline-item {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 0;
+    .timeline:before {
+        left: 40%;  /* Mover la línea hacia la izquierda */
     }
 
-    /* HORAS */
+    .timeline-item {
+        justify-content: center;
+    }
+
     .tl-time {
         text-align: right;
-        margin-right: 12px;   /* ACERCA la hora a la línea */
-        min-width: 65px;      /* Ajusta columna uniforme */
+        margin-right: 10px;
+        min-width: 70px;
     }
 
-    /* PUNTO */
     .tl-dot {
-        margin: 0 6px;        /* Espaciado perfecto en móvil */
+        margin: 0 6px;
     }
 
-    /* TEXTO */
     .tl-content {
-        text-align: left !important;
-        margin-left: 6px;     /* Lo acerca al punto */
-        max-width: 48%;        /* Para que no pese visualmente */
+        margin-left: 10px;
+        text-align: left;
     }
 }
 
@@ -247,18 +244,22 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
     }
 }
 
+
 /* --- SOBRE VIRTUAL LUXURY --- */
+/* --- SOBRE VIRTUAL LUXURY (FONDO CON FOTO) --- */
 .envelope-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--bg-cream); /* Fondo crema para combinar */
+    /* AQUÍ ESTÁ EL CAMBIO: Overlay oscuro + Imagen de portada */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('portada.jpeg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    /* Animación de salida suave */
     transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
 }
 
@@ -271,11 +272,12 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 .envelope-container {
     width: 90%;
     max-width: 450px;
-    background: white;
+    background: white; /* El recuadro se mantiene blanco sólido */
     padding: 60px 40px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border: 1px solid #eee;
+    /* Sombra más pronunciada para que flote sobre la foto */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    border-radius: 4px; /* Un ligero redondeo para suavizar */
     position: relative;
 }
 
@@ -330,88 +332,3 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
     font-size: 1.2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
-/* --- SOBRE VIRTUAL LUXURY --- */
-.envelope-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--bg-cream); /* Fondo crema para combinar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
-}
-
-.envelope-wrapper.fade-out {
-    transform: translateY(-100vh);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.envelope-container {
-    width: 90%;
-    max-width: 450px;
-    background: white;
-    padding: 60px 40px;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border: 1px solid #eee;
-    position: relative;
-}
-
-.envelope-line {
-    width: 50px;
-    height: 1px;
-    background: var(--brown-gold);
-    margin: 20px auto;
-}
-
-.envelope-text {
-    font-size: 0.8rem;
-    letter-spacing: 5px;
-    color: var(--text-dark);
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-
-.open-envelope-btn {
-    background: var(--green-forest);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-family: 'Montserrat';
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(90, 107, 84, 0.3);
-}
-
-.open-envelope-btn:hover {
-    background: var(--green-dark);
-    letter-spacing: 4px;
-    transform: scale(1.05);
-}
-
-.envelope-seal {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    background: var(--brown-gold);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
