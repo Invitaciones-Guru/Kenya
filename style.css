@@ -142,7 +142,13 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
 
 /* --- ITINERARIO CENTRADO (CORRECCIÓN) --- */
 
-/* --- ITINERARIO VERTICAL CENTRADO & LIMPIO --- */
+/* --- ITINERARIO VERTICAL (CORRECCIÓN FINAL) --- */
+
+.itinerary-section { 
+    padding: 80px 0; 
+    background: var(--white); /* Aseguramos fondo blanco o crema según tu diseño */
+    position: relative; 
+}
 
 .timeline-container { 
     position: relative; 
@@ -150,74 +156,67 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
     margin: 0 auto 60px auto; 
     padding: 20px 0;
     text-align: center;
-    /* Asegura que el contenedor principal no exceda el ancho de pantalla */
     width: 100%;
-    box-sizing: border-box;
 }
 
-/* La línea va DETRÁS de todo */
+/* La línea vertical del fondo */
 .timeline-line { 
     position: absolute; 
     left: 50%; 
     top: 0; 
     bottom: 0; 
     width: 1px; 
-    background: #e0e0e0; /* Color gris suave */
+    background: #d6d6d6; /* Color de la línea */
     transform: translateX(-50%); 
-    z-index: 0;
+    z-index: 0; 
 }
 
 .timeline-item { 
     position: relative; 
-    z-index: 2;
+    z-index: 2; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    margin-bottom: 50px;
-    /* Asegura que el ítem no sea más ancho que la pantalla */
-    max-width: 100%;
+    margin-bottom: 50px; 
 }
 
-/* HORA: Con fondo blanco para "cortar" la línea */
+/* HORA: Aquí está el truco del "corte" */
 .tl-time { 
-    background: white; 
+    background: var(--bg-cream); /* <--- IMPORTANTE: Mismo color que el fondo de tu página */
     padding: 5px 15px; 
     font-family: 'Montserrat', sans-serif; 
-    font-size: 0.9rem; 
+    font-size: 0.85rem; 
     font-weight: 600; 
     color: var(--brown-gold); 
     letter-spacing: 2px; 
-    margin-bottom: 10px;
-    display: inline-block;
+    margin-bottom: 15px; 
+    display: inline-block; /* Para que el fondo solo cubra el texto */
+    position: relative;
+    z-index: 2; /* Encima de la línea */
 }
 
 /* PUNTO CENTRAL */
 .tl-dot { 
-    width: 14px; 
-    height: 14px; 
-    background: white; 
-    border: 3px solid var(--green-forest);
+    width: 12px; 
+    height: 12px; 
+    background: var(--bg-cream); /* Centro del color del fondo */
+    border: 2px solid var(--green-forest); /* Borde verde */
     border-radius: 50%; 
     margin-bottom: 15px;
     position: relative;
     z-index: 2;
-    box-shadow: 0 0 0 5px white; /* Halo blanco para separar la línea */
+    /* Halo del color del fondo para separar la línea del punto */
+    box-shadow: 0 0 0 10px var(--bg-cream); 
 }
 
-/* CONTENIDO (TEXTO) - AQUÍ ESTÁ EL AJUSTE ANTI-DESBORDE */
+/* TEXTO DEL EVENTO: También cortamos la línea aquí */
 .tl-content { 
-    background: white;
-    padding: 10px 15px; 
+    background: var(--bg-cream); /* <--- IMPORTANTE: Mismo color que el fondo */
+    padding: 10px 20px; 
+    display: inline-block;
     position: relative; 
     z-index: 2;
-    
-    /* --- AJUSTES CLAVE PARA EVITAR DESBORDE --- */
-    width: 90%; /* Ocupa el 90% del ancho disponible, dejando márgenes */
-    max-width: 400px; /* Nunca será más ancho que esto, manteniendo el look centrado */
-    word-wrap: break-word; /* Rompe palabras largas si es necesario */
-    overflow-wrap: break-word; /* Sintaxis moderna para lo anterior */
-    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
-    margin: 0 auto; /* Centra el bloque de texto en sí mismo */
+    border-radius: 4px;
 }
 
 .tl-content h3 { 
@@ -226,29 +225,20 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
     margin: 0 0 5px 0; 
     color: var(--green-dark); 
     font-weight: 400;
-    line-height: 1.1; /* Mejora la lectura si el título es largo y salta de línea */
 }
 
 .tl-content p { 
-    font-size: 0.8rem; 
+    font-size: 0.75rem; 
     margin: 0; 
     color: #888; 
     letter-spacing: 2px;
     text-transform: uppercase;
-    line-height: 1.4;
 }
 
-/* Ajuste para asegurar márgenes en celulares muy pequeños */
-@media (max-width: 400px) {
-    .timeline-container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .tl-content h3 {
-        font-size: 1.8rem; /* Un poco más pequeño en pantallas mini */
-    }
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    .tl-content h3 { font-size: 1.8rem; }
 }
-
 
 
 /* --- SECCIÓN PADRINOS PRO --- */
