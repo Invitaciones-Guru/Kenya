@@ -140,49 +140,99 @@ footer { text-align: center; padding: 40px; background: var(--green-forest); col
     .gift-grid { flex-direction: row; justify-content: center; }
 }
 
+/* --- ITINERARIO CENTRADO (CORRECCIÓN) --- */
+
+/* Contenedor principal */
+.timeline-container { 
+    position: relative; 
+    max-width: 500px; /* Ancho controlado para que no se vea muy disperso */
+    margin: 0 auto 60px auto; 
+    padding: 20px 0;
+    text-align: center; /* Asegura que todo el texto se centre */
+}
+
+/* La línea vertical del fondo */
+.timeline-line { 
+    position: absolute; 
+    left: 50%; 
+    top: 0; 
+    bottom: 0; 
+    width: 1px; 
+    background: #e0e0e0; /* Color suave para la línea */
+    transform: translateX(-50%); 
+    z-index: 0;
+}
+
+/* Cada bloque de evento (Hora + Punto + Texto) */
+.timeline-item { 
+    display: flex; 
+    flex-direction: column; /* Esto hace que se apilen verticalmente */
+    align-items: center;    /* Esto centra los elementos horizontalmente */
+    justify-content: center;
+    margin-bottom: 50px; 
+    position: relative; 
+    z-index: 1;
+}
+
+/* La Hora */
+.tl-time { 
+    width: auto; 
+    text-align: center; 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    color: var(--brown-gold); 
+    letter-spacing: 2px; 
+    background: white; /* Fondo blanco para tapar la línea si es necesario */
+    padding: 5px 15px;
+    margin-bottom: 15px; /* Separación con el punto */
+}
+
+/* El Punto */
+.tl-dot { 
+    position: relative; /* Ya no es absolute */
+    left: auto;
+    transform: none;
+    width: 12px; 
+    height: 12px; 
+    background: var(--green-forest); 
+    border-radius: 50%; 
+    border: 3px solid white; /* Borde blanco para separarlo de la línea */
+    box-shadow: 0 0 0 1px #e0e0e0; 
+    margin-bottom: 15px; /* Separación con el texto */
+}
+
+/* El Contenido (Título y Descripción) */
+.tl-content { 
+    width: 100%; 
+    padding: 0; 
+    text-align: center; /* Fuerza el centrado del texto */
+}
+
+.tl-content h3 { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 2rem; /* Tamaño grande y elegante */
+    margin: 0 0 5px 0; 
+    color: var(--green-dark); 
+    font-weight: 400;
+}
+
+.tl-content p { 
+    font-size: 0.85rem; 
+    margin: 0; 
+    color: #777; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Ajuste para móviles para asegurar que no se desborde */
 @media (max-width: 600px) {
-
-    /* 1. Mover la línea vertical hacia la izquierda */
-    .timeline-line {
-        left: 35% !important;   /* AJUSTE PERFECTO para tu captura */
-        transform: translateX(-50%);
-    }
-
-    /* 2. Alinear horas más cerca de la línea */
-    .timeline-item .tl-time {
-        text-align: right;
-        margin-right: 10px;
-        min-width: 70px;
-    }
-
-    /* 3. Alinear el texto hacia la izquierda desde el punto */
-    .timeline-item .tl-content {
-        margin-left: 10px;
-        text-align: left;
-        max-width: 55%;
-    }
-
-    /* 4. Controlar espacio del punto */
-    .timeline-item .tl-dot {
-        margin: 0 8px;
+    .timeline-container {
+        max-width: 100%;
+        padding: 0 20px;
     }
 }
 
-
-.timeline-container {
-    position: relative;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.timeline-line {
-    position: absolute;
-    left: 38%; /* AJUSTA ESTE NÚMERO */
-    top: 0;
-    bottom: 0;
-    width: 1.5px;
-    background-color: #b9b9b9;
-}
 
 
 /* --- SECCIÓN PADRINOS PRO --- */
