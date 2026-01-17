@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="music-player" id="musicBtn" data-aos="fade-left">
+    <div class="music-player" id="musicBtn" data-aos="fade-left" data-aos-delay="1000">
         <div class="music-icon">🎵</div>
     </div>
     <audio id="weddingMusic" loop>
@@ -18,26 +18,31 @@
     </audio>
 
     <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="names-container" data-aos="zoom-out" data-aos-duration="2000">
-            <h1 class="script-font main-title">Camila & Diego</h1>
-            <p class="location-top">MONTERREY, NUEVO LEÓN • 2026</p>
+        <div class="hero-bg-animated"></div> <div class="hero-overlay"></div>
+        <div class="names-container">
+            <h1 class="script-font main-title" data-aos="fade-up" data-aos-duration="1500">Camila & Diego</h1>
+            <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
+                <p class="location-top">MONTERREY, NUEVO LEÓN • 2026</p>
+            </div>
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
+                <span>↓</span>
+            </div>
         </div>
     </header>
 
     <section class="parents-section">
-        <div class="container" data-aos="fade-up">
-            <p class="script-font intro-text">Te invitamos a celebrar el amor</p>
+        <div class="container">
+            <p class="script-font intro-text" data-aos="zoom-in" data-aos-duration="1200">Te invitamos a celebrar el amor</p>
             
-            <div class="parents-wrapper">
+            <div class="parents-wrapper" data-aos="fade-up" data-aos-duration="1000">
                 <p class="section-label">EN COMPAÑÍA DE NUESTROS PADRES</p>
                 <div class="parents-grid">
-                    <div class="parent-col">
+                    <div class="parent-col" data-aos="fade-right" data-aos-delay="200">
                         <p class="parent-name">Adriana Pérez</p>
                         <p class="parent-name">Oscar Pérez</p>
                     </div>
-                    <div class="divider-vertical"></div>
-                    <div class="parent-col">
+                    <div class="divider-vertical" data-aos="zoom-in" data-aos-delay="400"></div>
+                    <div class="parent-col" data-aos="fade-left" data-aos-delay="200">
                         <p class="parent-name">Karina Sánchez</p>
                         <p class="parent-name">Luis Sánchez</p>
                     </div>
@@ -45,15 +50,15 @@
             </div>
 
             <div class="godparents-wrapper">
-                <p class="section-label">NUESTROS PADRINOS</p>
+                <p class="section-label" data-aos="fade-up">NUESTROS PADRINOS</p>
                 <div class="godparents-flex">
-                    <div class="gp-item"><span>ANILLOS</span><p>Jorge & Maria</p></div>
-                    <div class="gp-item"><span>LAZO</span><p>Roberto & Lucia</p></div>
-                    <div class="gp-item"><span>ARRAS</span><p>Pedro & Sofia</p></div>
+                    <div class="gp-item" data-aos="fade-up" data-aos-delay="100"><span>ANILLOS</span><p>Jorge & Maria</p></div>
+                    <div class="gp-item" data-aos="fade-up" data-aos-delay="200"><span>LAZO</span><p>Roberto & Lucia</p></div>
+                    <div class="gp-item" data-aos="fade-up" data-aos-delay="300"><span>ARRAS</span><p>Pedro & Sofia</p></div>
                 </div>
             </div>
 
-            <div id="countdown" class="countdown" data-aos="fade-up">
+            <div id="countdown" class="countdown" data-aos="flip-up" data-aos-duration="1500">
                 <div class="time-box"><span id="days">00</span><small>DÍAS</small></div>
                 <div class="time-box"><span id="hours">00</span><small>HRS</small></div>
                 <div class="time-box"><span id="minutes">00</span><small>MIN</small></div>
@@ -64,33 +69,33 @@
 
     <section class="story-fixed-section">
         <div class="fixed-bg" style="background-image: url('foto3.jpeg');"></div>
-        <div class="story-content" data-aos="fade-up">
+        <div class="story-content" data-aos="fade-up" data-aos-duration="1200" data-aos-offset="300">
             <h2 class="script-font story-title">Nuestra Historia</h2>
             <span class="story-date">EST. 2018</span>
             <p class="story-text">"Lo que comenzó como una casualidad se convirtió en nuestro destino favorito. Hoy decidimos caminar juntos para siempre."</p>
-            <p class="script-font signature">C & D</p>
+            <p class="script-font signature" data-aos="zoom-in" data-aos-delay="500">C & D</p>
         </div>
     </section>
 
     <section class="gallery-section">
-        <p class="section-label dark">MOMENTOS INOLVIDABLES</p>
+        <p class="section-label dark" data-aos="fade">MOMENTOS INOLVIDABLES</p>
         <div class="gallery-grid">
-            <div class="g-item" data-aos="fade-up"><img src="foto1.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="foto2.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="200"><img src="foto3.jpeg"></div>
-            <div class="g-item" data-aos="fade-up"><img src="foto4.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="foto9.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="200"><img src="portada.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-duration="1000"><img src="foto1.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150"><img src="foto2.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><img src="foto3.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-duration="1000"><img src="foto4.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150"><img src="foto9.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><img src="portada.jpeg"></div>
         </div>
     </section>
 
     <section class="itinerary-section">
-        <h2 class="script-font section-title">El Gran Día</h2>
+        <h2 class="script-font section-title" data-aos="fade-up">El Gran Día</h2>
         
-        <div class="timeline-container" data-aos="fade-up">
-            <div class="timeline-line"></div>
+        <div class="timeline-container">
+            <div class="timeline-line" id="draw-line"></div>
             
-            <div class="timeline-item">
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
                 <div class="tl-time">3:30 PM</div>
                 <div class="tl-dot"></div>
                 <div class="tl-content">
@@ -99,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
                 <div class="tl-time">5:00 PM</div>
                 <div class="tl-dot"></div>
                 <div class="tl-content">
@@ -108,7 +113,7 @@
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="500">
                 <div class="tl-time">6:30 PM</div>
                 <div class="tl-dot"></div>
                 <div class="tl-content">
@@ -117,7 +122,7 @@
                 </div>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="700">
                 <div class="tl-time">8:00 PM</div>
                 <div class="tl-dot"></div>
                 <div class="tl-content">
@@ -128,8 +133,8 @@
         </div>
 
         <div class="details-blocks">
-            <div class="detail-card" data-aos="fade-up">
-                <div class="detail-img"><img src="foto1.jpeg"></div>
+            <div class="detail-card" data-aos="fade-up" data-aos-duration="1200">
+                <div class="detail-img hover-zoom"><img src="foto1.jpeg"></div>
                 <div class="detail-info">
                     <h3 class="script-font card-title">Ceremonia Religiosa</h3>
                     <p class="venue">CATEDRAL DE MONTERREY</p>
@@ -137,8 +142,8 @@
                 </div>
             </div>
 
-            <div class="detail-card reverse" data-aos="fade-up">
-                <div class="detail-img"><img src="foto2.jpeg"></div>
+            <div class="detail-card reverse" data-aos="fade-up" data-aos-duration="1200">
+                <div class="detail-img hover-zoom"><img src="foto2.jpeg"></div>
                 <div class="detail-info">
                     <h3 class="script-font card-title">Recepción</h3>
                     <p class="venue">QUINTA LAS FLORES</p>
@@ -146,8 +151,8 @@
                 </div>
             </div>
 
-            <div class="detail-card" data-aos="fade-up">
-                <div class="detail-img"><img src="foto4.jpeg"></div>
+            <div class="detail-card" data-aos="fade-up" data-aos-duration="1200">
+                <div class="detail-img hover-zoom"><img src="foto4.jpeg"></div>
                 <div class="detail-info">
                     <h3 class="script-font card-title">Dress Code</h3>
                     <p class="venue">RIGUROSO FORMAL</p>
@@ -158,18 +163,18 @@
     </section>
 
     <section class="gifts-section">
-        <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="zoom-in-up" data-aos-duration="1000">
             <h2 class="script-font section-title">Mesa de Regalos</h2>
             <p class="gift-intro">Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros:</p>
             
             <div class="gift-grid">
-                <div class="gift-box">
+                <div class="gift-box" data-aos="flip-left" data-aos-delay="200">
                     <span class="icon">✉️</span>
                     <h3>Sobre / Transferencia</h3>
                     <p class="bank-details">Banco: Banamex<br>Cuenta: 1234567890</p>
                     <button class="btn-outline" onclick="copyText('0000000000000000')">COPIAR CLABE</button>
                 </div>
-                <div class="gift-box">
+                <div class="gift-box" data-aos="flip-right" data-aos-delay="400">
                     <span class="icon">🎁</span>
                     <h3>Liverpool</h3>
                     <p class="bank-details">Evento: 123456</p>
@@ -179,23 +184,23 @@
         </div>
     </section>
 
-    <section class="guestbook-section">
+    <section class="guestbook-section" data-aos="fade-in">
         <h2 class="script-font section-title">Libro de Visitas</h2>
         <div class="messages-slider">
-            <div class="msg-card">
+            <div class="msg-card" data-aos="fade-up" data-aos-delay="100">
                 <p>"¡Que sean muy felices!"</p>
                 <span>- Familia Ruiz</span>
             </div>
-            <div class="msg-card">
+            <div class="msg-card" data-aos="fade-up" data-aos-delay="300">
                 <p>"Nos vemos en la boda."</p>
                 <span>- Ana y Carlos</span>
             </div>
         </div>
-        <a href="https://wa.me/528186694938" class="btn-text">DEJAR UN MENSAJE ➔</a>
+        <a href="https://wa.me/528186694938" class="btn-text" data-aos="fade-up">DEJAR UN MENSAJE ➔</a>
     </section>
 
     <section class="album-section">
-        <div class="album-container" data-aos="zoom-in">
+        <div class="album-container" data-aos="zoom-in" data-aos-duration="1200">
             <div class="album-content">
                 <h2 class="album-heading">Álbum Digital</h2>
                 <p>AYÚDANOS A CAPTURAR CADA MOMENTO</p>
@@ -208,7 +213,7 @@
     </section>
 
     <section class="rsvp-section">
-        <div class="rsvp-wrapper" data-aos="fade-up">
+        <div class="rsvp-wrapper" data-aos="fade-up" data-aos-duration="1500">
             <h2 class="script-font rsvp-title">Confirmación</h2>
             <p class="rsvp-deadline">FAVOR DE CONFIRMAR ANTES DEL 1 DE ENERO</p>
             
