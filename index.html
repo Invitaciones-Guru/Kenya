@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta property="og:title" content="Kenya & David | ¡Nuestra Boda!">
-<meta property="og:description" content="Te invitamos a compartir con nosotros el día más importante de nuestras vidas. Haz clic para ver los detalles.">
-<meta property="og:image" content="portada.jpeg">
-
     <title>Kenya & David | Nuestra Boda</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,400&family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="envelope-wrapper" class="envelope-wrapper">
-    <div class="envelope-container" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="envelope-paper">
-            <h2 class="script-font" style="font-size: 3rem; color: var(--green-forest); margin-bottom: 10px;">Kenya & David</h2>
-            <div class="envelope-line"></div>
-            <p class="envelope-text">NUESTRA BODA</p>
-            <button id="open-btn" class="open-envelope-btn">ABRIR INVITACIÓN</button>
+    <div id="envelope-overlay" class="envelope-overlay">
+        <div class="envelope-body">
+            <div class="envelope-flap" id="flap"></div>
+            <div class="envelope-front"></div>
+            <div class="wax-seal-btn" id="open-btn">
+                <span>K&D</span>
+            </div>
+            <p class="tap-text">Toca el sello para abrir</p>
         </div>
-        <div class="envelope-seal">✧</div>
     </div>
-</div>
 
-
-    <div class="music-player pulse-animation" id="musicBtn" data-aos="fade-left" data-aos-delay="1000">
-        <div class="music-icon">🎵</div>
+    <div class="music-player pulse-animation" id="musicBtn" data-aos="fade-left" data-aos-delay="1500">
+        <svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
     </div>
     <audio id="weddingMusic" loop>
         <source src="Hasta mi Final Il Divo Piano solo.mp3" type="audio/mpeg">
@@ -37,251 +31,277 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="names-container">
-            <h1 class="script-font main-title" data-aos="fade-up" data-aos-duration="2000">Kenya & David</h1>
-            <p class="location-top" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1500">MONTERREY, NUEVO LEÓN • 2026</p>
+            <h1 class="font-alex main-name" data-aos="zoom-out" data-aos-duration="2000">Kenya & David</h1>
+            <p class="font-tenor location-top" data-aos="fade-up" data-aos-delay="600">MONTERREY, NUEVO LEÓN • 2026</p>
         </div>
     </header>
 
     <section class="parents-section">
         <div class="container">
-            <p class="script-font intro-text" data-aos="fade-up" data-aos-duration="1500">Te invitamos a celebrar el amor</p>
+            <p class="font-alex intro-phrase" data-aos="fade-up">Tu presencia es nuestro mejor regalo</p>
             
             <div class="parents-wrapper" data-aos="fade-up" data-aos-delay="200">
-                <p class="section-label">EN COMPAÑÍA DE NUESTROS PADRES</p>
-                <div class="parents-grid">
-                    <div class="parent-col" data-aos="fade-right" data-aos-delay="300">
-                        <p class="parent-name">María Cristina López</p>
-                        <p class="parent-name">Francisco Resendiz</p>
+                <div class="section-header-clean">
+                    <span class="mix-top">EN COMPAÑÍA DE</span>
+                    <span class="mix-bottom">Nuestros Padres</span>
+                </div>
+                
+                <div class="parents-cards-layout">
+                    <div class="parent-card">
+                        <p class="font-tenor">María Cristina López</p>
+                        <p class="font-tenor">Francisco Resendiz</p>
                     </div>
-                    <div class="divider-vertical" data-aos="zoom-in" data-aos-delay="400"></div>
-                    <div class="parent-col" data-aos="fade-left" data-aos-delay="300">
-                        <p class="parent-name">Alma Yolanda Barrientos</p>
-                        <p class="parent-name">David Antonio Castillo</p>
+                    <div class="decorative-line"></div>
+                    <div class="parent-card">
+                        <p class="font-tenor">Alma Yolanda Barrientos</p>
+                        <p class="font-tenor">David Antonio Castillo</p>
                     </div>
                 </div>
             </div>
 
-       <div class="godparents-wrapper" data-aos="fade-up" data-aos-delay="400">
-    <p class="section-label">NUESTROS PADRINOS</p>
-    <div class="godparents-grid-pro">
-        
-        <div class="gp-card" data-aos="zoom-in-up" data-aos-delay="500">
-            <div class="gp-icon">💍</div>
-            <div class="gp-info">
-                <span>ANILLOS</span>
-                <p>Sonia López</p>
-                <p>& Sergio Castilla</p>
+            <div class="godparents-wrapper">
+                <div class="section-header-clean" data-aos="fade-up">
+                    <span class="mix-top">TESTIGOS DE AMOR</span>
+                    <span class="mix-bottom">Nuestros Padrinos</span>
+                </div>
+                
+                <div class="godparents-grid-pro">
+                    <div class="gp-card" data-aos="zoom-in-up">
+                        <div class="icon-circle">💍</div>
+                        <div class="gp-info">
+                            <span class="font-tenor gp-role">DE ANILLOS</span>
+                            <p class="font-tenor gp-name">Sonia López & Sergio Castilla</p>
+                        </div>
+                    </div>
+                    <div class="gp-card" data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="icon-circle">♾️</div>
+                        <div class="gp-info">
+                            <span class="font-tenor gp-role">DE LAZO</span>
+                            <p class="font-tenor gp-name">Verónica García & Armando Castilla</p>
+                        </div>
+                    </div>
+                    <div class="gp-card" data-aos="zoom-in-up" data-aos-delay="200">
+                        <div class="icon-circle">🪙</div>
+                        <div class="gp-info">
+                            <span class="font-tenor gp-role">DE ARRAS</span>
+                            <p class="font-tenor gp-name">Antonia Sánchez & Carlos Resendiz</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="gp-card" data-aos="zoom-in-up" data-aos-delay="600">
-            <div class="gp-icon">📿</div>
-            <div class="gp-info">
-                <span>LAZO</span>
-                <p>Verónica García</p>
-                <p>& Armando Castilla</p>
-            </div>
-        </div>
-
-        <div class="gp-card" data-aos="zoom-in-up" data-aos-delay="700">
-            <div class="gp-icon">🪙</div>
-            <div class="gp-info">
-                <span>ARRAS</span>
-                <p>Antonia Sánchez</p>
-                <p>& Carlos Resendiz</p>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-            <div id="countdown" class="countdown" data-aos="fade-up" data-aos-offset="10">
-                <div class="time-box" data-aos="flip-left" data-aos-delay="100"><span id="days">00</span><small>DÍAS</small></div>
-                <div class="time-box" data-aos="flip-left" data-aos-delay="200"><span id="hours">00</span><small>HRS</small></div>
-                <div class="time-box" data-aos="flip-left" data-aos-delay="300"><span id="minutes">00</span><small>MIN</small></div>
-                <div class="time-box" data-aos="flip-left" data-aos-delay="400"><span id="seconds">00</span><small>SEG</small></div>
+            <div class="magazine-counter" data-aos="fade-up">
+                <div class="mag-header">
+                    <p class="font-alex" style="font-size: 3.5rem;">Sábado</p>
+                </div>
+                <div class="mag-date-display">
+                    <span class="mag-day font-tenor">18</span>
+                    <div class="mag-vertical-line"></div>
+                    <div class="mag-month-year font-tenor">
+                        <span>AGOSTO</span>
+                        <span>2026</span>
+                    </div>
+                </div>
+                <div class="mag-std">
+                    <p class="font-alex">Save the Date</p>
+                </div>
+                <div id="countdown" class="mag-timer font-tenor">
+                    <div class="time-col"><span id="days">00</span><small>DÍAS</small></div>
+                    <div class="time-col"><span id="hours">00</span><small>HRS</small></div>
+                    <div class="time-col"><span id="minutes">00</span><small>MIN</small></div>
+                    <div class="time-col"><span id="seconds">00</span><small>SEG</small></div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="story-fixed-section">
         <div class="fixed-bg" style="background-image: url('foto3.jpeg');"></div>
-        <div class="story-content" data-aos="zoom-out-up" data-aos-duration="1200">
-            <h2 class="script-font story-title">Nuestra Historia</h2>
-            <span class="story-date">EST. 2018</span>
+        <div class="story-content" data-aos="zoom-out">
+            <div class="section-header-clean">
+                <span class="mix-top" style="color: var(--green-forest);">NUESTRA</span>
+                <span class="mix-bottom" style="color: var(--green-forest);">Historia</span>
+            </div>
+            <span class="font-tenor story-est">EST. 2018</span>
             <p class="story-text">"Lo que comenzó como una casualidad se convirtió en nuestro destino favorito. Hoy decidimos caminar juntos para siempre."</p>
-            <p class="script-font signature">K & D</p>
+            <p class="font-alex signature">Kenya & David</p>
         </div>
     </section>
 
     <section class="gallery-section">
-        <p class="section-label dark" data-aos="fade-up">MOMENTOS INOLVIDABLES</p>
+        <div class="section-header-clean" data-aos="fade-up">
+            <span class="mix-top" style="color: var(--brown-gold);">MOMENTOS</span>
+            <span class="mix-bottom" style="color: var(--brown-gold);">Inolvidables</span>
+        </div>
         <div class="gallery-grid">
-            <div class="g-item" data-aos="fade-up" data-aos-delay="0"><img src="foto1.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="150"><img src="foto2.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="300"><img src="foto3.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="0"><img src="foto4.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="150"><img src="fondo.jpeg"></div>
-            <div class="g-item" data-aos="fade-up" data-aos-delay="300"><img src="portada.jpeg"></div>
+            <div class="g-item" data-aos="fade-up"><img src="foto1.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="foto2.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="200"><img src="foto3.jpeg"></div>
+            <div class="g-item" data-aos="fade-up"><img src="foto4.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="100"><img src="foto9.jpeg"></div>
+            <div class="g-item" data-aos="fade-up" data-aos-delay="200"><img src="portada.jpeg"></div>
         </div>
     </section>
 
     <section class="itinerary-section">
-        <h2 class="script-font section-title" data-aos="fade-up">El Gran Día</h2>
+        <div class="section-header-clean" data-aos="fade-up">
+            <span class="mix-top">PROGRAMA DEL</span>
+            <span class="mix-bottom">Gran Día</span>
+        </div>
         
         <div class="timeline-container">
-            <div class="timeline-line" data-aos="zoom-in-down" data-aos-duration="1500"></div>
-            
+            <div class="timeline-line" data-aos="zoom-in-down"></div>
             <div class="timeline-item">
-                <div class="tl-time" data-aos="fade-right">3:30 PM</div>
-                <div class="tl-dot" data-aos="zoom-in" data-aos-delay="300"></div>
-                <div class="tl-content" data-aos="fade-left">
-                    <h3>Ceremonia</h3>
-                    <p>El momento del "Sí"</p>
-                </div>
+                <div class="tl-time font-tenor" data-aos="fade-right">3:30 PM</div>
+                <div class="tl-dot" data-aos="zoom-in"></div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Ceremonia</h3><p>El momento del "Sí"</p></div>
             </div>
-
             <div class="timeline-item">
-                <div class="tl-time" data-aos="fade-right">5:00 PM</div>
-                <div class="tl-dot" data-aos="zoom-in" data-aos-delay="300"></div>
-                <div class="tl-content" data-aos="fade-left">
-                    <h3>Cóctel</h3>
-                    <p>Brindis de bienvenida</p>
-                </div>
+                <div class="tl-time font-tenor" data-aos="fade-right">5:00 PM</div>
+                <div class="tl-dot" data-aos="zoom-in"></div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Cóctel</h3><p>Brindis de bienvenida</p></div>
             </div>
-
             <div class="timeline-item">
-                <div class="tl-time" data-aos="fade-right">6:30 PM</div>
-                <div class="tl-dot" data-aos="zoom-in" data-aos-delay="300"></div>
-                <div class="tl-content" data-aos="fade-left">
-                    <h3>Banquete</h3>
-                    <p>Cena y música suave</p>
-                </div>
+                <div class="tl-time font-tenor" data-aos="fade-right">6:30 PM</div>
+                <div class="tl-dot" data-aos="zoom-in"></div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Banquete</h3><p>Cena y música suave</p></div>
             </div>
-
             <div class="timeline-item">
-                <div class="tl-time" data-aos="fade-right">8:00 PM</div>
-                <div class="tl-dot" data-aos="zoom-in" data-aos-delay="300"></div>
-                <div class="tl-content" data-aos="fade-left">
-                    <h3>Fiesta</h3>
-                    <p>¡A celebrar!</p>
-                </div>
+                <div class="tl-time font-tenor" data-aos="fade-right">8:00 PM</div>
+                <div class="tl-dot" data-aos="zoom-in"></div>
+                <div class="tl-content font-tenor" data-aos="fade-left"><h3>Fiesta</h3><p>¡A celebrar!</p></div>
             </div>
         </div>
 
         <div class="details-blocks">
-            <div class="detail-card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="detail-card" data-aos="fade-up">
                 <div class="detail-img"><img src="foto1.jpeg"></div>
                 <div class="detail-info">
-                    <h3 class="script-font card-title">Ceremonia Religiosa</h3>
-                    <p class="venue">CATEDRAL DE MONTERREY</p>
-                    <a href="https://maps.apple/p/HwVAo-KyGK8Lg-" class="btn-line">VER UBICACIÓN</a>
+                    <div class="section-header-clean">
+                        <span class="mix-top" style="color: var(--green-forest);">CEREMONIA</span>
+                        <span class="mix-bottom" style="color: var(--green-forest);">Religiosa</span>
+                    </div>
+                    <p class="font-tenor venue">CATEDRAL DE MONTERREY</p>
+                    <a href="https://maps.apple/p/HwVAo-KyGK8Lg-" class="btn-line font-tenor">VER UBICACIÓN</a>
                 </div>
             </div>
 
-            <div class="detail-card reverse" data-aos="fade-up" data-aos-duration="1000">
+            <div class="detail-card reverse" data-aos="fade-up">
                 <div class="detail-img"><img src="foto2.jpeg"></div>
                 <div class="detail-info">
-                    <h3 class="script-font card-title">Recepción</h3>
-                    <p class="venue">QUINTA LAS FLORES</p>
-                    <a href="https://maps.apple/p/jL_Eae4Bv-a7.w" class="btn-line">VER UBICACIÓN</a>
+                    <div class="section-header-clean">
+                        <span class="mix-top" style="color: var(--green-forest);">NUESTRA</span>
+                        <span class="mix-bottom" style="color: var(--green-forest);">Recepción</span>
+                    </div>
+                    <p class="font-tenor venue">QUINTA LAS FLORES</p>
+                    <a href="https://maps.apple/p/jL_Eae4Bv-a7.w" class="btn-line font-tenor">VER UBICACIÓN</a>
                 </div>
             </div>
 
-            <div class="detail-card" data-aos="fade-up" data-aos-duration="1000">
-                <div class="detail-img"><img src="foto4.jpeg"></div>
+            <div class="detail-card" data-aos="fade-up">
+                <div class="detail-img"><img src="foto7.jpeg"></div>
                 <div class="detail-info">
-                    <h3 class="script-font card-title">Dress Code</h3>
-                    <p class="venue">RIGUROSO FORMAL</p>
-                    <a href="https://pin.it/7Dz0k5tX2" class="btn-line">VER IDEAS</a>
+                    <div class="section-header-clean">
+                        <span class="mix-top" style="color: var(--green-forest);">CÓDIGO DE</span>
+                        <span class="mix-bottom" style="color: var(--green-forest);">Vestimenta</span>
+                    </div>
+                    <p class="font-tenor venue">RIGUROSO FORMAL</p>
+                    <a href="https://pin.it/7Dz0k5tX2" class="btn-line font-tenor">VER IDEAS</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="passes-section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header-clean">
+                <span class="mix-top" style="color: var(--green-forest);">DETALLES</span>
+                <span class="mix-bottom" style="color: var(--green-forest);">Importantes</span>
+            </div>
+            
+            <div class="passes-grid">
+                <div class="pass-card">
+                    <div class="pass-icon"><svg class="icon-svg-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 11.5c0 2-2.5 3.5-2.5 5h8v-10h-8c0 1.5 2.5 3 2.5 5zm-5 0c0-2-2.5-3.5-2.5-5h-8v10h8c0-1.5 2.5-3 2.5-5z"/></svg></div>
+                    <h3 class="font-tenor">Pases Asignados</h3>
+                    <p class="font-tenor">Hemos reservado lugares exclusivamente para ustedes. El número de pases se confirmará vía WhatsApp.</p>
+                </div>
+                <div class="pass-vertical-line"></div>
+                <div class="pass-card">
+                    <div class="pass-icon"><svg class="icon-svg-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l-5 4H4v12h3l5 4 5-4h3V6h-3l-5-4z"/></svg></div>
+                    <h3 class="font-tenor">No Niños</h3>
+                    <p class="font-tenor">Amamos a los niños, pero hemos decidido que nuestra boda sea un evento exclusivo para adultos.</p>
+                </div>
+            </div>
+            <p class="font-alex elegant-footer-note">Esperamos contar con su grata presencia</p>
         </div>
     </section>
 
     <section class="gifts-section">
         <div class="container">
-            <h2 class="script-font section-title" data-aos="fade-up">Mesa de Regalos</h2>
-            <p class="gift-intro" data-aos="fade-up" data-aos-delay="200">Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros:</p>
+            <div class="section-header-clean" data-aos="fade-up">
+                <span class="mix-top">MESA DE</span>
+                <span class="mix-bottom">Regalos</span>
+            </div>
+            <p class="gift-intro font-tenor" data-aos="fade-up">Su presencia es nuestro mejor regalo.</p>
             
             <div class="gift-grid">
-                <div class="gift-box" data-aos="flip-left" data-aos-duration="1200">
-                    <span class="icon">✉️</span>
-                    <h3>Sobre / Transferencia</h3>
-                    <p class="bank-details">Banco: Banamex<br>Cuenta: 1234567890</p>
-                    <button class="btn-outline" onclick="copyText('0000000000000000')">COPIAR CLABE</button>
+                <div class="gift-box" data-aos="flip-left">
+                    <div class="icon-box-md"><svg class="icon-svg-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <h3 class="font-tenor gift-title">TRANSFERENCIA</h3>
+                    <p class="font-tenor bank-text">Banco: Banamex<br>Titular: Kenya y David</p>
+                    <button class="btn-outline font-tenor" onclick="copyText('1234567890123456')">COPIAR CLABE</button>
                 </div>
-                <div class="gift-box" data-aos="flip-right" data-aos-duration="1200" data-aos-delay="200">
-                    <span class="icon">🎁</span>
-                    <h3>Liverpool</h3>
-                    <p class="bank-details">Evento: 123456</p>
-                    <a href="#" class="btn-solid">VER MESA</a>
+                <div class="gift-box" data-aos="flip-right">
+                    <div class="icon-box-md"><svg class="icon-svg-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15h-3v-8h3v8zm-5 0h-3v-8h3v8zm-5 0H7v-8h3v8zm-5 0H4v-8h3v8z"/></svg></div>
+                    <h3 class="font-tenor gift-title">LIVERPOOL</h3>
+                    <p class="font-tenor bank-text">Mesa de Bodas</p>
+                    <a href="#" class="btn-solid font-tenor">VER MESA</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="guestbook-section">
-        <h2 class="script-font section-title" data-aos="fade-up">Libro de Visitas</h2>
-        <div class="messages-slider" data-aos="fade-left" data-aos-duration="1500">
-            <div class="msg-card">
-                <p>"¡Que sean muy felices!"</p>
-                <span>- Familia Ruiz</span>
-            </div>
-            <div class="msg-card">
-                <p>"Nos vemos en la boda."</p>
-                <span>- Ana y Carlos</span>
-            </div>
+        <h2 class="font-alex section-title" style="font-size: 3.5rem;">Libro de Visitas</h2>
+        <div class="messages-slider">
+            <div class="msg-card"><p>"¡Felicidades!"</p><span>- Familia Ruiz</span></div>
+            <div class="msg-card"><p>"Los queremos."</p><span>- Ana y Carlos</span></div>
+            <div class="msg-card"><p>"Que sean muy felices."</p><span>- Tía Sofia</span></div>
         </div>
-        <a href="https://wa.me/528186694938" class="btn-text" data-aos="fade-up">DEJAR UN MENSAJE ➔</a>
+        <a href="https://wa.me/528186694938" class="btn-text font-tenor">DEJAR MENSAJE ➔</a>
     </section>
 
     <section class="album-section">
-        <div class="album-container" data-aos="zoom-in" data-aos-duration="1200">
+        <div class="album-container" data-aos="zoom-in">
             <div class="album-content">
-                <h2 class="album-heading">Álbum Digital</h2>
-                <p>AYÚDANOS A CAPTURAR CADA MOMENTO</p>
-                <div class="qr-frame" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="frame.png" alt="QR Code" class="qr-code">
-                </div>
-                <a href="https://photos.app.goo.gl/QChh5iwS7c75EZQu9" class="btn-black">SUBIR FOTOS AQUÍ</a>
+                <h2 class="font-tenor album-heading">ÁLBUM DIGITAL</h2>
+                <p class="font-tenor">AYÚDANOS A CAPTURAR CADA MOMENTO</p>
+                <div class="qr-frame"><img src="frame.png" alt="QR" class="qr-code"></div>
+                <a href="https://photos.app.goo.gl/QChh5iwS7c75EZQu9" class="btn-black font-tenor">SUBIR FOTOS</a>
             </div>
         </div>
     </section>
 
     <section class="rsvp-section">
-        <div class="rsvp-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
-            <h2 class="script-font rsvp-title">Confirmación</h2>
-            <p class="rsvp-deadline">FAVOR DE CONFIRMAR ANTES DEL 1 DE ENERO</p>
-            
+        <div class="rsvp-wrapper" data-aos="fade-up">
+            <h2 class="font-alex rsvp-title">Confirmación</h2>
+            <p class="rsvp-deadline font-tenor">FAVOR DE CONFIRMAR ANTES DEL 1 DE ENERO</p>
             <form id="rsvpForm" class="rsvp-form">
+                <div class="input-group"><input type="text" id="guestName" placeholder="Nombre completo" class="font-tenor" required></div>
                 <div class="input-group">
-                    <input type="text" id="guestName" placeholder="Nombre completo" required>
-                </div>
-                <div class="input-group">
-                    <select id="attendance" required>
-                        <option value="" disabled selected>¿Podrás acompañarnos?</option>
+                    <select id="attendance" class="font-tenor" required>
+                        <option value="" disabled selected>¿Asistirás?</option>
                         <option value="si">¡Sí, ahí estaré!</option>
                         <option value="no">Lo siento, no podré</option>
                     </select>
                 </div>
-                <div class="row-group">
-                    <input type="number" id="numGuests" placeholder="No. Personas" min="1" required>
-                    <select id="plusOne">
-                        <option value="No">Sin extra</option>
-                        <option value="Si">Con extra</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-gold">ENVIAR CONFIRMACIÓN</button>
+                <div class="row-group"><input type="number" id="numGuests" placeholder="No. Personas" min="1" class="font-tenor" required></div>
+                <button type="submit" class="btn-gold font-tenor">ENVIAR CONFIRMACIÓN</button>
             </form>
-            <p class="kids-policy">EVENTO SOLO PARA ADULTOS</p>
         </div>
     </section>
 
-    <footer>
-        <p>Hecho con amor | Camila & Diego 2026</p>
-    </footer>
+    <footer><p class="font-tenor">Hecho con amor | Kenya & David 2026</p></footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
