@@ -1,7 +1,7 @@
 /* REGISTRAR FUENTE LOCAL */
 @font-face {
     font-family: 'BrittanySignature';
-    src: url('Brittany.ttf') format('truetype'); 
+    src: url('BrittanySignature.ttf') format('truetype'); 
     /* OJO: Si tu archivo es .otf, cambia .ttf por .otf y 'truetype' por 'opentype' */
     font-weight: normal;
     font-style: normal;
