@@ -1,86 +1,69 @@
-// FUNCIONALIDAD APERTURA DE SOBRE
+const weddingDate = new Date("Aug 18, 2026 15:30:00").getTime();
+
+// SVG ICONS
+const iconPlay = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const iconPause = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+
 document.addEventListener('DOMContentLoaded', function() {
     const openBtn = document.getElementById('open-btn');
-    const envelopeWrapper = document.getElementById('envelope-wrapper');
+    const overlay = document.getElementById('envelope-overlay');
     const music = document.getElementById('weddingMusic');
     const musicBtn = document.getElementById('musicBtn');
+    let musicStarted = false;
 
+    // ABRIR SOBRE
     openBtn.addEventListener('click', function() {
-        // 1. Desvanecer sobre
-        envelopeWrapper.classList.add('fade-out');
-        
-        // 2. Iniciar música automáticamente
-        music.play();
-        isPlaying = true;
-        musicBtn.innerHTML = '<div class="music-icon">⏸</div>';
-        musicBtn.classList.add('pulse-animation');
-        
-        // 3. Reiniciar AOS para que las animaciones de la invitación 
-        // comiencen justo cuando se quita el sobre
-        setTimeout(() => {
-            AOS.refresh();
-        }, 600);
+        overlay.classList.add('opened');
+        if (!musicStarted) {
+            music.play().then(() => {
+                musicBtn.innerHTML = iconPause;
+                musicBtn.classList.add('pulse-animation');
+            }).catch(e => console.log("Autoplay bloqueado"));
+            musicStarted = true;
+        }
+        setTimeout(() => { AOS.init({ duration: 1200, easing: 'ease-out-cubic', once: true, offset: 100 }); }, 600);
+    });
+
+    // CONTROL MÚSICA
+    musicBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            musicBtn.innerHTML = iconPause;
+            musicBtn.classList.add('pulse-animation');
+        } else {
+            music.pause();
+            musicBtn.innerHTML = iconPlay;
+            musicBtn.classList.remove('pulse-animation');
+        }
     });
 });
 
-
-// FECHA
-const weddingDate = new Date("Jul 25, 2026 15:30:00").getTime();
-
-// COUNTDOWN
 const timer = setInterval(function() {
     const now = new Date().getTime();
     const distance = weddingDate - now;
-    
-    document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
-    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days < 10 ? '0' + days : days;
+    document.getElementById("hours").innerHTML = hours < 10 ? '0' + hours : hours;
+    document.getElementById("minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
+    document.getElementById("seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
     if (distance < 0) { clearInterval(timer); document.getElementById("countdown").innerHTML = "¡ES HOY!"; }
 }, 1000);
 
-// RSVP
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => alert("Datos bancarios copiados"));
+}
+
 document.getElementById('rsvpForm').onsubmit = (e) => {
     e.preventDefault();
     const nombre = document.getElementById('guestName').value;
     const asistencia = document.getElementById('attendance').value;
     const personas = document.getElementById('numGuests').value;
-    const plusOne = document.getElementById('plusOne').value;
-    
     const status = asistencia === "si" ? "CONFIRMADO ✅" : "NO ASISTIRÁ ❌";
-    
-    const msg = `Hola Camila y Diego, soy ${nombre}.\n\nRSVP: ${status}\nPersonas: ${personas}\nExtra: ${plusOne}\n\n¡Gracias por la invitación!`;
-
+    const msg = `Hola Kenya y David, soy ${nombre}.\nRSVP: ${status}\nPersonas: ${personas}`;
     window.open(`https://wa.me/528186694938?text=${encodeURIComponent(msg)}`, '_blank');
 };
-
-// MÚSICA
-const musicBtn = document.getElementById('musicBtn');
-const music = document.getElementById('weddingMusic');
-let isPlaying = false;
-
-musicBtn.addEventListener('click', () => {
-    if (isPlaying) {
-        music.pause();
-        musicBtn.innerHTML = '<div class="music-icon">🎵</div>';
-        musicBtn.classList.remove('pulse-animation'); // Detener animación al pausar
-    } else {
-        music.play();
-        musicBtn.innerHTML = '<div class="music-icon">⏸</div>';
-        musicBtn.classList.add('pulse-animation'); // Activar animación al reproducir
-    }
-    isPlaying = !isPlaying;
-});
-
-function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => { alert("Datos bancarios copiados"); });
-}
-
-// INICIALIZACIÓN AOS CON CONFIGURACIÓN "LUXURY"
-AOS.init({
-    duration: 1200, // Animaciones más lentas y elegantes (1.2 segundos)
-    easing: 'ease-out-cubic', // Efecto de frenado suave
-    once: true, // Solo animar una vez al bajar
-    offset: 120 // Empezar a animar un poco antes
-});
