@@ -1,3 +1,12 @@
+/* REGISTRAR FUENTE LOCAL */
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('Brittany.ttf') format('truetype'); 
+    /* OJO: Si tu archivo es .otf, cambia .ttf por .otf y 'truetype' por 'opentype' */
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --bg-cream: #f8f6f4;
     --green-forest: #5a6b54;
@@ -12,7 +21,13 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow-x: hidden; }
 
 /* ---------------- FUENTES (Brittany Style + Editorial) ---------------- */
-.font-alex { font-family: 'Alex Brush', cursive; font-weight: 400; line-height: 1.2; }
+/* Ahora usamos la Brittany Real */
+.font-alex { 
+    font-family: 'BrittanySignature', cursive; 
+    font-weight: 400; 
+    line-height: 1.2; 
+}
+
 .font-tenor { font-family: 'Tenor Sans', sans-serif; letter-spacing: 1px; }
 
 /* ---------------- MIX DE TIPOGRAFÍAS (SIN SOBRELAPAR) ---------------- */
