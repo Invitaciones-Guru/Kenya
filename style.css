@@ -23,11 +23,10 @@
 .signature,
 .section-title,
 .rsvp-title,
-.elegant-footer-note,
-.gp-clean-name { 
+.elegant-footer-note { 
     font-family: 'BrittanySignature', cursive !important; 
     font-weight: 400; 
-    line-height: 1.5; /* Espacio para que no choquen las letras */
+    line-height: 1.5; /* Mayor interlineado para evitar choques */
 }
 
 /* =========================================
@@ -100,230 +99,40 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 /* PADRES */
 .parents-section { background: var(--green-forest); color: white; padding: 80px 20px; text-align: center; }
 .parents-section .mix-top, .parents-section .mix-bottom { color: white !important; }
-.intro-phrase { font-size: 3rem; margin-bottom: 100px; /* Margen amplio */ color: white; line-height: 1.5; }
+.intro-phrase { font-size: 3rem; margin-bottom: 100px; /* Margen aumentado como pediste */ color: white; line-height: 1.5; }
 .parents-cards-layout { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
 .parent-card { background: rgba(255,255,255,0.1); padding: 20px 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; }
-.parent-card p { font-size: 1rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
+.parent-card p { font-size: 1rem; /* Nombres padres más pequeños */ margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
 .decorative-line { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
 
-/* --- SECCIÓN PADRINOS SLIDER (PREMIUM) --- */
-.godparents-slider-section {
-    padding: 100px 20px;
-    background: #fdfbf9; 
-    overflow: hidden; 
-}
+/* PADRINOS */
+.godparents-wrapper { margin-top: 80px; }
+.godparents-grid-pro { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+.gp-card { background: rgba(255,255,255,0.1); padding: 30px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s; display: flex; flex-direction: column; align-items: center; }
+.gp-card:hover { transform: translateY(-5px); border-color: white; }
+.icon-circle { width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 15px; }
+.gp-role { font-size: 0.7rem; display: block; letter-spacing: 3px; opacity: 0.8; margin-bottom: 5px; }
+.gp-name { font-size: 1.1rem; text-transform: uppercase; }
 
-/* El contenedor del slider */
-.swiper {
-    width: 100%;
-    max-width: 600px; 
-    padding: 20px 50px 50px 50px !important; 
-}
+/* SAVE THE DATE (FONDO + COLORES NUEVOS) */
+.magazine-counter { margin-top: 80px; background: url('foto3.jpeg') center/cover no-repeat fixed; position: relative; padding: 60px 0; }
+.magazine-counter::before { content: ''; position: absolute; inset: 0; background: rgba(255, 255, 255, 0.90); z-index: 0; }
+.relative-box { position: relative; z-index: 2; }
+.mag-header p, .mag-std p { color: var(--green-forest); font-size: 3rem; margin: 0 0 30px 0; opacity: 1; }
+.mag-date-display { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 20px; }
+.mag-day { font-size: 6rem; line-height: 1; color: var(--green-dark); }
+.mag-vertical-line { width: 2px; height: 60px; background: var(--brown-gold); opacity: 1; }
+.mag-month-year { display: flex; flex-direction: column; text-align: left; font-size: 1.5rem; color: var(--green-dark); }
+.mag-timer { display: flex; justify-content: center; gap: 15px; }
+.time-col { text-align: center; }
+.time-col span { display: block; font-size: 2.5rem; line-height: 1; color: var(--green-forest); }
+.time-col small { font-size: 0.6rem; letter-spacing: 1px; opacity: 0.8; color: var(--text-dark); }
 
-.swiper-slide {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px; 
-}
-
-.gp-slide-content {
-    text-align: center;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.gp-slide-role {
-    font-family: 'Tenor Sans', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--brown-gold);
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.gp-slide-line {
-    width: 40px;
-    height: 1px;
-    background: var(--green-forest);
-    opacity: 0.3;
-    margin: 15px 0 20px 0;
-}
-
-.gp-slide-name {
-    font-family: 'Tenor Sans', sans-serif; /* LETRA ENTENDIBLE */
-    font-size: 1.6rem;
-    color: var(--green-dark);
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Flechas del Slider */
-.swiper-button-next, .swiper-button-prev {
-    color: var(--brown-gold) !important;
-    transform: scale(0.6);
-    font-weight: bold;
-}
-.swiper-pagination-bullet-active {
-    background: var(--green-forest) !important;
-}
-
-/* =========================================
-   SAVE THE DATE (TARJETA FLOTANTE CENTRADA)
-   ========================================= */
-
-/* =========================================
-   SAVE THE DATE (TARJETA FLOTANTE + SEPARACIÓN)
-   ========================================= */
-
-.magazine-counter { 
-    margin-top: 80px; 
-    
-    /* AGREGADO: Esto separa el Save the Date de la Historia */
-    margin-bottom: 100px; 
-    
-    /* Fondo con la foto fija (Ocupa todo el ancho) */
-    background: url('foto3.jpeg') center/cover no-repeat fixed; 
-    position: relative;
-    padding: 80px 0; 
-    
-    /* Centrado de la tarjeta flotante */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* El resto se queda igual para mantener la tarjeta flotante */
-.magazine-counter::before { display: none; }
-
-/* IMPORTANTE: Eliminamos la capa blanca de pantalla completa */
-.magazine-counter::before { 
-    display: none; 
-}
-
-/* ESTA ES LA TARJETA FLOTANTE */
-.relative-box { 
-    background: rgba(255, 255, 255, 0.93); /* Fondo blanco casi sólido */
-    width: 85%;            /* Ancho del recuadro en celular */
-    max-width: 450px;      /* Ancho máximo en PC */
-    padding: 40px 20px;    /* Espacio interno */
-    border-radius: 15px;   /* Bordes redondeados */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Sombra para que "flote" */
-    
-    position: relative; 
-    z-index: 2; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-}
-
-/* 1. SÁBADO */
-.mag-header p {
-    font-size: 2.5rem !important; 
-    color: var(--brown-gold);
-    margin: 0;
-    line-height: 1.2;
-}
-
-/* 2. FECHA CENTRAL (18 | AGOSTO) */
-.mag-date-display { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 15px; 
-    margin: 15px 0; 
-    width: 100%; /* Asegura que se centre en la tarjeta */
-}
-
-.mag-day { 
-    font-size: 5.5rem; /* Ajustado para que quepa en el cuadro */
-    line-height: 1; 
-    color: var(--green-forest); 
-}
-
-.mag-vertical-line { 
-    width: 2px; 
-    height: 60px; 
-    background: var(--brown-gold); 
-    opacity: 0.6; 
-}
-
-.mag-month-year { 
-    display: flex; 
-    flex-direction: column; 
-    text-align: left; 
-    justify-content: center;
-}
-
-.mag-month-year span:nth-child(1) { /* AGOSTO */
-    font-size: 1.5rem;
-    color: var(--green-dark);
-    letter-spacing: 2px;
-    line-height: 1;
-}
-
-.mag-month-year span:nth-child(2) { /* 2026 */
-    font-size: 1rem;
-    color: var(--brown-gold);
-    letter-spacing: 4px;
-    margin-top: 5px;
-}
-
-/* 3. SAVE THE DATE */
-/* 3. TÍTULO SAVE THE DATE (Con ajuste óptico) */
-.mag-std p { 
-    /* Regla maestra de fuente */
-    font-family: 'BrittanySignature', cursive !important;
-    font-size: 3.5rem !important; /* Tamaño ajustado para que quepa bien en el cuadro */
-    color: var(--green-forest); 
-    margin: 10px 0 30px 0; 
-    line-height: 1.2;
-
-    /* --- TRUCO DE CENTRADO ÓPTICO --- */
-    position: relative; 
-    /* Movemos el texto 15px a la izquierda para compensar la 't' larga */
-    transform: translateX(-15px); 
-}
-
-
-/* 4. CONTADOR */
-.mag-timer { 
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    width: 100%;
-}
-
-.time-col { 
-    text-align: center; 
-}
-
-.time-col span { 
-    display: block; 
-    font-size: 1.8rem; 
-    line-height: 1; 
-    color: var(--text-dark); 
-    font-weight: 500;
-}
-
-.time-col small { 
-    font-size: 0.6rem; 
-    letter-spacing: 1px; 
-    opacity: 0.6; 
-    color: var(--text-dark); 
-    margin-top: 5px;
-    display: block;
-}
-
+/* GALERÍA */
+.gallery-section { padding: 80px 10px; text-align: center; background: var(--bg-cream); }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px; max-width: 1000px; margin: 30px auto; }
+.g-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; transition: transform 0.5s ease; }
+.g-item:hover img { transform: scale(1.03); }
 
 /* HISTORIA */
 .story-fixed-section { position: relative; padding: 100px 20px; display: flex; justify-content: center; }
@@ -331,12 +140,6 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .story-content { background: white; padding: 60px 40px; max-width: 500px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
 .story-est { font-size: 0.8rem; letter-spacing: 3px; display: block; margin: 10px 0 20px; color: var(--brown-gold); }
 .signature { font-size: 3.5rem; color: var(--brown-gold); margin-top: 30px; line-height: 1.5; }
-
-/* GALERÍA */
-.gallery-section { padding: 80px 10px; text-align: center; background: var(--bg-cream); }
-.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px; max-width: 1000px; margin: 30px auto; }
-.g-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; transition: transform 0.5s ease; }
-.g-item:hover img { transform: scale(1.03); }
 
 /* ITINERARIO */
 .itinerary-section { padding: 80px 0; background: white; }
@@ -349,7 +152,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .tl-content h3 { font-family: 'Tenor Sans', sans-serif; font-size: 1.8rem; margin: 0 0 5px 0; color: var(--green-forest); text-transform: uppercase; letter-spacing: 1px; }
 .tl-content p { font-family: 'Tenor Sans', sans-serif; font-size: 0.9rem; letter-spacing: 1px; color: #555; margin: 0; line-height: 1.4; }
 
-/* DETALLES Y BLOQUES (Ceremonia, Recepción, etc) */
+/* DETALLES Y BLOQUES */
 .details-blocks { background: var(--bg-cream); padding: 60px 20px; }
 .detail-card { background: white; margin-bottom: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
 .detail-img img { width: 100%; height: 300px; object-fit: cover; }
@@ -357,7 +160,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .venue { font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 20px; }
 .btn-line { text-decoration: none; color: black; border-bottom: 1px solid var(--brown-gold); font-size: 0.7rem; letter-spacing: 2px; }
 
-/* --- SECCIÓN DETALLES IMPORTANTES (TARJETA FORMAL) --- */
+/* --- NUEVA SECCIÓN DETALLES IMPORTANTES (ESTILO TARJETA) --- */
 .important-details-pro { padding: 80px 20px; background: var(--bg-cream); }
 .details-card-frame { background: white; max-width: 900px; margin: 0 auto; padding: 50px 30px; border: 1px solid #e3e3e3; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; text-align: center; }
 .details-card-frame::before { content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 1px solid var(--brown-gold); opacity: 0.5; pointer-events: none; }
