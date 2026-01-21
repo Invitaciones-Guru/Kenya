@@ -176,45 +176,51 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 }
 
 /* =========================================
-   SAVE THE DATE (DISEÑO EDITORIAL LIMPIO)
+   SAVE THE DATE (TARJETA FLOTANTE CENTRADA)
    ========================================= */
 
 .magazine-counter { 
     margin-top: 80px; 
-    /* Fondo con la foto fija */
+    /* Fondo con la foto fija (Ocupa todo el ancho) */
     background: url('foto3.jpeg') center/cover no-repeat fixed; 
     position: relative;
-    padding: 100px 0; /* Buen espacio vertical */
-    text-align: center;
-    overflow: hidden;
+    padding: 80px 0; /* Espacio arriba y abajo del recuadro */
+    
+    /* ESTO CENTRA LA TARJETA PERFECTAMENTE */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Capa blanca al 92% para que el texto se lea perfecto sobre la foto */
+/* IMPORTANTE: Eliminamos la capa blanca de pantalla completa */
 .magazine-counter::before { 
-    content: ''; 
-    position: absolute; 
-    inset: 0; 
-    background: rgba(255, 255, 255, 0.92); 
-    z-index: 0; 
+    display: none; 
 }
 
-/* Contenedor para que el texto quede encima de la capa blanca */
+/* ESTA ES LA TARJETA FLOTANTE */
 .relative-box { 
+    background: rgba(255, 255, 255, 0.93); /* Fondo blanco casi sólido */
+    width: 85%;            /* Ancho del recuadro en celular */
+    max-width: 450px;      /* Ancho máximo en PC */
+    padding: 40px 20px;    /* Espacio interno */
+    border-radius: 15px;   /* Bordes redondeados */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Sombra para que "flote" */
+    
     position: relative; 
     z-index: 2; 
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 10px;
 }
 
-/* 1. SÁBADO (Clase .mag-header p) */
+/* 1. SÁBADO */
 .mag-header p {
-    /* Brittany forzada por la regla maestra */
-    font-size: 3rem !important; 
+    font-size: 2.5rem !important; 
     color: var(--brown-gold);
-    margin: 0 0 10px 0;
-    line-height: 1;
+    margin: 0;
+    line-height: 1.2;
 }
 
 /* 2. FECHA CENTRAL (18 | AGOSTO) */
@@ -222,19 +228,20 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    gap: 25px; 
-    margin: 20px 0; 
+    gap: 15px; 
+    margin: 15px 0; 
+    width: 100%; /* Asegura que se centre en la tarjeta */
 }
 
 .mag-day { 
-    font-size: 7rem; 
-    line-height: 0.8; 
+    font-size: 5.5rem; /* Ajustado para que quepa en el cuadro */
+    line-height: 1; 
     color: var(--green-forest); 
 }
 
 .mag-vertical-line { 
     width: 2px; 
-    height: 80px; 
+    height: 60px; 
     background: var(--brown-gold); 
     opacity: 0.6; 
 }
@@ -246,26 +253,25 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     justify-content: center;
 }
 
-.mag-month-year span:first-child { /* MES */
-    font-size: 2rem;
+.mag-month-year span:nth-child(1) { /* AGOSTO */
+    font-size: 1.5rem;
     color: var(--green-dark);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     line-height: 1;
 }
 
-.mag-month-year span:last-child { /* AÑO */
-    font-size: 1.2rem;
+.mag-month-year span:nth-child(2) { /* 2026 */
+    font-size: 1rem;
     color: var(--brown-gold);
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     margin-top: 5px;
 }
 
-/* 3. TÍTULO SAVE THE DATE (Clase .mag-std p) */
+/* 3. SAVE THE DATE */
 .mag-std p { 
-    /* Brittany forzada por la regla maestra */
-    font-size: 4rem !important; 
+    font-size: 3.5rem !important; /* Ajustado para la tarjeta */
     color: var(--green-forest); 
-    margin: 20px 0 40px 0; 
+    margin: 10px 0 30px 0; 
     line-height: 1.2;
 }
 
@@ -273,7 +279,8 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .mag-timer { 
     display: flex; 
     justify-content: center; 
-    gap: 30px; 
+    gap: 20px; 
+    width: 100%;
 }
 
 .time-col { 
@@ -282,20 +289,21 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 
 .time-col span { 
     display: block; 
-    font-size: 2.2rem; 
+    font-size: 1.8rem; 
     line-height: 1; 
     color: var(--text-dark); 
     font-weight: 500;
 }
 
 .time-col small { 
-    font-size: 0.7rem; 
-    letter-spacing: 2px; 
+    font-size: 0.6rem; 
+    letter-spacing: 1px; 
     opacity: 0.6; 
     color: var(--text-dark); 
     margin-top: 5px;
     display: block;
 }
+
 
 /* HISTORIA */
 .story-fixed-section { position: relative; padding: 100px 20px; display: flex; justify-content: center; }
