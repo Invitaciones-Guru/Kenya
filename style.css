@@ -176,13 +176,53 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .decorative-line { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
 
 /* PADRINOS */
-.godparents-wrapper { margin-top: 80px; }
-.godparents-grid-pro { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
-.gp-card { background: rgba(255,255,255,0.1); padding: 30px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s; display: flex; flex-direction: column; align-items: center; }
-.gp-card:hover { transform: translateY(-5px); border-color: white; }
-.icon-circle { width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 15px; }
-.gp-role { font-size: 0.7rem; display: block; letter-spacing: 3px; opacity: 0.8; margin-bottom: 5px; }
-.gp-name { font-size: 1.1rem; text-transform: uppercase; }
+/* --- SECCIÓN PADRINOS LIMPIA (PREMIUM DESIGN) --- */
+.godparents-clean-section {
+    padding: 100px 20px;
+    background: white; /* Fondo blanco para separar de los padres */
+    text-align: center;
+}
+
+.godparents-clean-list {
+    max-width: 600px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.gp-clean-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gp-clean-role {
+    font-size: 0.8rem;
+    letter-spacing: 4px; /* Mucho espaciado para elegancia */
+    color: var(--brown-gold);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.gp-clean-name {
+    /* Usará Brittany gracias a la regla maestra */
+    font-size: 2.8rem; 
+    color: var(--green-dark);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Pequeña línea divisoria entre padrinos */
+.gp-divider {
+    width: 40px;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
 
 /* GALERÍA */
 .gallery-section { padding: 80px 10px; text-align: center; background: var(--bg-cream); }
