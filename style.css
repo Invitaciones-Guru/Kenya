@@ -176,51 +176,75 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .decorative-line { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
 
 /* PADRINOS */
-/* --- SECCIÓN PADRINOS LIMPIA (PREMIUM DESIGN) --- */
-.godparents-clean-section {
+/* --- SECCIÓN PADRINOS SLIDER (PREMIUM) --- */
+.godparents-slider-section {
     padding: 100px 20px;
-    background: white; /* Fondo blanco para separar de los padres */
+    background: #fdfbf9; /* Un crema muy clarito para diferenciar */
+    overflow: hidden; /* Evita desbordes horizontales */
+}
+
+/* El contenedor del slider */
+.swiper {
+    width: 100%;
+    max-width: 600px; /* Ancho máximo elegante */
+    padding: 20px 50px 50px 50px !important; /* Espacio para las flechas y sombras */
+}
+
+.swiper-slide {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Altura fija para que todas las tarjetas sean iguales */
+    height: 300px; 
+}
+
+.gp-slide-content {
     text-align: center;
-}
-
-.godparents-clean-list {
-    max-width: 600px;
-    margin: 50px auto 0;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    height: 100%;
 }
 
-.gp-clean-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.gp-clean-role {
+.gp-slide-role {
+    font-family: 'Tenor Sans', sans-serif;
     font-size: 0.8rem;
-    letter-spacing: 4px; /* Mucho espaciado para elegancia */
+    letter-spacing: 3px;
     color: var(--brown-gold);
-    margin-bottom: 5px;
     text-transform: uppercase;
     font-weight: 600;
 }
 
-.gp-clean-name {
-    /* Usará Brittany gracias a la regla maestra */
-    font-size: 2.8rem; 
-    color: var(--green-dark);
-    margin: 0;
-    line-height: 1.3;
-}
-
-/* Pequeña línea divisoria entre padrinos */
-.gp-divider {
+.gp-slide-line {
     width: 40px;
     height: 1px;
-    background-color: #ddd;
-    margin: 10px 0;
+    background: var(--green-forest);
+    opacity: 0.3;
+    margin: 15px 0 20px 0;
+}
+
+.gp-slide-name {
+    font-family: 'Tenor Sans', sans-serif; /* LETRA ENTENDIBLE */
+    font-size: 1.6rem;
+    color: var(--green-dark);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- ESTILO DE LAS FLECHAS --- */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--brown-gold) !important; /* Color dorado */
+    transform: scale(0.6); /* Hacemos las flechas más finas visualmente */
+    font-weight: bold;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--green-forest) !important;
 }
 
 
