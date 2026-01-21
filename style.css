@@ -64,14 +64,61 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     line-height: 1.4;
 }
 
-/* --- CONTADOR REVISTA CON FONDO DE IMAGEN --- */
+/* --- CONTADOR REVISTA (COLORES NUEVOS) --- */
 .magazine-counter { 
     margin-top: 80px; 
-    /* Fondo: Asegúrate de tener una foto llamada 'fondo-std.jpeg' o cambia el nombre aquí */
     background: url('foto3.jpeg') center/cover no-repeat fixed; 
     position: relative;
     padding: 60px 0; 
 }
+
+.magazine-counter::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255, 255, 255, 0.90); /* Un poco más blanco para contraste */
+    z-index: 0;
+}
+
+.relative-box { position: relative; z-index: 2; }
+
+.mag-header p, .mag-std p { 
+    /* Títulos en Cursiva (Sábado, Save the Date) */
+    color: var(--green-forest); 
+    font-size: 3rem; margin: 0 0 30px 0; opacity: 1; 
+}
+
+.mag-date-display { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 20px; }
+
+.mag-day { 
+    /* El número grande del día (18) */
+    font-size: 6rem; line-height: 1; 
+    color: var(--green-dark); 
+}
+
+.mag-vertical-line { 
+    width: 2px; height: 60px; 
+    background: var(--brown-gold); /* Línea dorada */
+    opacity: 1; 
+}
+
+.mag-month-year { 
+    display: flex; flex-direction: column; text-align: left; font-size: 1.5rem; 
+    color: var(--green-dark); /* Mes y Año */
+}
+
+.mag-timer { display: flex; justify-content: center; gap: 15px; }
+.time-col { text-align: center; }
+
+.time-col span { 
+    /* Números del contador */
+    display: block; font-size: 2.5rem; line-height: 1; 
+    color: var(--green-forest); 
+}
+
+.time-col small { 
+    font-size: 0.6rem; letter-spacing: 1px; opacity: 0.8; 
+    color: var(--text-dark); 
+}
+
 
 /* Capa blanca semitransparente para que se lea el texto */
 .magazine-counter::before {
@@ -125,7 +172,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .intro-phrase { font-size: 3rem; margin-bottom: 40px; color: white; line-height: 1.5; }
 .parents-cards-layout { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
 .parent-card { background: rgba(255,255,255,0.1); padding: 20px 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; }
-.parent-card p { font-size: 1.3rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
+.parent-card p { font-size: 0.8rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
 .decorative-line { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
 
 /* PADRINOS */
