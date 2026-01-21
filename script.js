@@ -67,3 +67,36 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     const msg = `Hola Kenya y David, soy ${nombre}.\nRSVP: ${status}\nPersonas: ${personas}`;
     window.open(`https://wa.me/528186694938?text=${encodeURIComponent(msg)}`, '_blank');
 };
+
+
+// Inicializar Swiper de Padrinos
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (Tu código anterior del sobre y música) ...
+
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow", // Efecto 3D sutil
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        loop: true, // Para que sea infinito
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 4000, // Se mueve solo cada 4 segundos
+            disableOnInteraction: false,
+        },
+    });
+});
