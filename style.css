@@ -268,12 +268,21 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 }
 
 /* 3. SAVE THE DATE */
+/* 3. TÍTULO SAVE THE DATE (Con ajuste óptico) */
 .mag-std p { 
-    font-size: 3.5rem !important; /* Ajustado para la tarjeta */
+    /* Regla maestra de fuente */
+    font-family: 'BrittanySignature', cursive !important;
+    font-size: 3.5rem !important; /* Tamaño ajustado para que quepa bien en el cuadro */
     color: var(--green-forest); 
     margin: 10px 0 30px 0; 
     line-height: 1.2;
+
+    /* --- TRUCO DE CENTRADO ÓPTICO --- */
+    position: relative; 
+    /* Movemos el texto 15px a la izquierda para compensar la 't' larga */
+    transform: translateX(-15px); 
 }
+
 
 /* 4. CONTADOR */
 .mag-timer { 
