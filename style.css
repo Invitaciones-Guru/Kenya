@@ -179,18 +179,29 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
    SAVE THE DATE (TARJETA FLOTANTE CENTRADA)
    ========================================= */
 
+/* =========================================
+   SAVE THE DATE (TARJETA FLOTANTE + SEPARACIÓN)
+   ========================================= */
+
 .magazine-counter { 
     margin-top: 80px; 
+    
+    /* AGREGADO: Esto separa el Save the Date de la Historia */
+    margin-bottom: 100px; 
+    
     /* Fondo con la foto fija (Ocupa todo el ancho) */
     background: url('foto3.jpeg') center/cover no-repeat fixed; 
     position: relative;
-    padding: 80px 0; /* Espacio arriba y abajo del recuadro */
+    padding: 80px 0; 
     
-    /* ESTO CENTRA LA TARJETA PERFECTAMENTE */
+    /* Centrado de la tarjeta flotante */
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/* El resto se queda igual para mantener la tarjeta flotante */
+.magazine-counter::before { display: none; }
 
 /* IMPORTANTE: Eliminamos la capa blanca de pantalla completa */
 .magazine-counter::before { 
