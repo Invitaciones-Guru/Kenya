@@ -1,58 +1,39 @@
 /* -----------------------------------------------------------
-   1. REGISTRO DE TU FUENTE LOCAL (BRITTANY)
+   1. REGISTRO DE TU FUENTE LOCAL (A PRUEBA DE FALLOS)
+   Asegúrate que el archivo se llame BrittanySignature.ttf
    ----------------------------------------------------------- */
 @font-face {
     font-family: 'BrittanySignature';
-    src: url('BrittanySignature.ttf') format('truetype'); 
-    /* Si tu archivo es .otf, cambia a: url('Brittany.otf') format('opentype'); */
+    src: url('BrittanySignature.ttf') format('truetype'),
+         url('Brittany.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 /* -----------------------------------------------------------
-   2. UNIFICACIÓN DE CURSIVAS
-   Aquí le decimos a todas las clases cursivas que usen Brittany
+   2. FORZAR BRITTANY EN TODO LO CURSIVO
+   Esta es la lista maestra. Si está aquí, será Brittany sí o sí.
    ----------------------------------------------------------- */
-
-/* Clase principal para títulos y frases */
-.font-brittany, 
 .font-alex, 
-.font-rochester { 
-    font-family: 'BrittanySignature', cursive; 
+.font-brittany, 
+.font-rochester,
+.mix-bottom, 
+.main-name,
+.intro-phrase,
+.mag-header p,
+.mag-std p,
+.signature,
+.section-title,
+.rsvp-title,
+.elegant-footer-note { 
+    font-family: 'BrittanySignature', cursive !important; 
     font-weight: 400; 
     line-height: 1.2; 
 }
 
-/* Clase para la parte de abajo de los títulos mixtos (Ej: "Nuestros Padres") */
-.mix-bottom {
-    font-family: 'BrittanySignature', cursive;
-    font-size: 4rem; /* Ajusta este tamaño si Brittany se ve muy chica o grande */
-    line-height: 1.1;
-    position: relative; 
-    z-index: 1;
-    color: var(--brown-gold);
-}
-
-/* Clase específica para la palabra "Vestimenta" en el Dress Code */
-.dc-bottom { 
-    font-family: 'BrittanySignature', cursive;
-    font-size: 5rem; 
-    line-height: 1; 
-    color: var(--green-forest); 
-    position: relative; 
-    z-index: 1; 
-}
-
 /* -----------------------------------------------------------
-   3. FUENTE EDITORIAL (TEXTOS NORMALES)
-   Esta se queda igual (Tenor Sans o la que gustes)
+   3. ESTILOS GENERALES
    ----------------------------------------------------------- */
-.font-tenor, 
-.font-corporative { 
-    font-family: 'Tenor Sans', sans-serif; 
-    letter-spacing: 1px; 
-}
-
 :root {
     --bg-cream: #f8f6f4;
     --green-forest: #5a6b54;
@@ -66,17 +47,10 @@ html { scroll-behavior: smooth; }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow-x: hidden; }
 
-/* ---------------- FUENTES (Brittany Style + Editorial) ---------------- */
-/* Ahora usamos la Brittany Real */
-.font-alex { 
-    font-family: 'BrittanySignature', cursive; 
-    font-weight: 400; 
-    line-height: 1.2; 
-}
-
+/* Fuente Editorial (Tenor Sans) */
 .font-tenor { font-family: 'Tenor Sans', sans-serif; letter-spacing: 1px; }
 
-/* ---------------- MIX DE TIPOGRAFÍAS (SIN SOBRELAPAR) ---------------- */
+/* Mix de Tipografías (Padres, Padrinos, Dress Code) */
 .section-header-clean {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     margin-bottom: 30px; text-align: center;
@@ -84,58 +58,29 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .mix-top {
     font-family: 'Tenor Sans', sans-serif;
     font-size: 0.9rem; letter-spacing: 4px;
-    margin-bottom: 5px; /* Espacio positivo */
+    margin-bottom: 5px; 
     color: var(--brown-gold);
     text-transform: uppercase;
 }
 .mix-bottom {
-    font-family: 'Alex Brush', cursive;
-    font-size: 4rem; line-height: 1.1;
+    /* Brittany ya se aplica por la regla maestra de arriba */
+    font-size: 4rem; 
     color: var(--brown-gold);
+    z-index: 1;
+    position: relative;
 }
 
-/* ---------------- SOBRE REALISTA (V2) ---------------- */
-.envelope-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    background: url('portada.jpeg') center/cover;
-    display: flex; justify-content: center; align-items: center;
-    z-index: 9999; transition: transform 1.2s ease-in-out;
-}
+/* --- SOBRE VIRTUAL --- */
+.envelope-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: url('portada.jpeg') center/cover; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: transform 1.2s ease-in-out; }
 .envelope-overlay::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
 .envelope-overlay.opened { transform: translateY(-120%); }
 
-.envelope-body {
-    width: 350px; height: 250px; background: #eae5de;
-    position: relative;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    display: flex; justify-content: center; align-items: center;
-}
-.envelope-front {
-    position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
-    background: #f4f1ed;
-    clip-path: polygon(0 100%, 50% 50%, 100% 100%);
-    z-index: 2;
-}
-.envelope-flap {
-    position: absolute; top: 0; left: 0; width: 100%; height: 50%;
-    background: #e0dcd5;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-    z-index: 4; /* Encima de todo */
-    transform-origin: top;
-    transition: transform 0.6s ease;
-}
+.envelope-body { width: 350px; height: 250px; background: #eae5de; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
+.envelope-front { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: #f4f1ed; clip-path: polygon(0 100%, 50% 50%, 100% 100%); z-index: 2; }
+.envelope-flap { position: absolute; top: 0; left: 0; width: 100%; height: 50%; background: #e0dcd5; clip-path: polygon(0 0, 50% 100%, 100% 0); z-index: 4; transform-origin: top; transition: transform 0.6s ease; }
 .envelope-overlay.opened .envelope-flap { transform: rotateX(180deg); opacity: 0; }
 
-.wax-seal-btn {
-    position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
-    width: 80px; height: 80px;
-    background: var(--wax-red); border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    cursor: pointer; z-index: 10;
-    border: 3px solid rgba(255,255,255,0.2);
-    transition: transform 0.3s;
-}
+.wax-seal-btn { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: var(--wax-red); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; z-index: 10; border: 3px solid rgba(255,255,255,0.2); transition: transform 0.3s; }
 .wax-seal-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
 .wax-seal-btn span { font-family: 'Tenor Sans'; color: white; font-size: 1.5rem; font-weight: bold; }
 .tap-text { position: absolute; bottom: -60px; color: white; font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 2px; animation: pulse 2s infinite; }
@@ -165,7 +110,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .gp-role { font-size: 0.7rem; display: block; letter-spacing: 3px; opacity: 0.8; margin-bottom: 5px; }
 .gp-name { font-size: 1.1rem; text-transform: uppercase; }
 
-/* GALERÍA (RESTAURADA) */
+/* GALERÍA */
 .gallery-section { padding: 80px 10px; text-align: center; background: var(--bg-cream); }
 .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px; max-width: 1000px; margin: 30px auto; }
 .g-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; transition: transform 0.5s ease; }
@@ -234,14 +179,14 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 footer { text-align: center; padding: 30px; background: var(--green-dark); color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 1px; }
 
-/* LIBRO DE VISITAS (RESTAURADO) */
+/* LIBRO DE VISITAS */
 .guestbook-section { padding: 80px 20px; background: white; text-align: center; }
 .messages-slider { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; justify-content: center; }
 .msg-card { background: var(--bg-cream); padding: 30px; min-width: 280px; border: 1px solid #eee; }
 .msg-card p { font-family: 'Tenor Sans'; font-style: italic; font-size: 1.2rem; }
 .btn-text { display: inline-block; margin-top: 30px; text-decoration: none; color: var(--green-forest); font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; border-bottom: 1px solid var(--green-forest); }
 
-/* ÁLBUM EDITORIAL (RESTAURADO) */
+/* ÁLBUM */
 .album-section { padding: 80px 20px; background: var(--bg-cream); }
 .album-container { border: 1px solid var(--brown-gold); padding: 15px; max-width: 600px; margin: 0 auto; background: white; }
 .album-content { border: 1px solid var(--brown-gold); padding: 60px 20px; text-align: center; }
@@ -250,7 +195,7 @@ footer { text-align: center; padding: 30px; background: var(--green-dark); color
 .qr-code { width: 100%; display: block; }
 .btn-black { background: var(--text-dark); color: white; text-decoration: none; padding: 15px 35px; font-size: 0.75rem; letter-spacing: 3px; display: inline-block; font-weight: 600; }
 
-/* RSVP PREMIUM CARD (RESTAURADO) */
+/* RSVP */
 .rsvp-section { padding: 100px 20px; background: url('foto3.jpeg') center/cover fixed; display: flex; justify-content: center; position: relative; }
 .rsvp-section::before { content: ''; position: absolute; inset: 0; background: rgba(90, 107, 84, 0.85); }
 .rsvp-wrapper { position: relative; z-index: 2; background: white; padding: 60px 30px; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
