@@ -169,7 +169,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 /* PADRES */
 .parents-section { background: var(--green-forest); color: white; padding: 80px 20px; text-align: center; }
 .parents-section .mix-top, .parents-section .mix-bottom { color: white !important; }
-.intro-phrase { font-size: 3rem; margin-bottom: 40px; color: white; line-height: 1.5; }
+.intro-phrase { font-size: 3rem; margin-bottom: 100px; color: white; line-height: 1.5; }
 .parents-cards-layout { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
 .parent-card { background: rgba(255,255,255,0.1); padding: 20px 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; }
 .parent-card p { font-size: 0.8rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
