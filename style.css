@@ -56,7 +56,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     text-transform: uppercase;
 }
 .mix-bottom {
-    font-size: 4rem; 
+    font-size: 2.5rem; 
     color: var(--brown-gold);
     z-index: 1;
     position: relative;
