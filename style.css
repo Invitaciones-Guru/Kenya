@@ -146,7 +146,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     left: 50%; 
     transform: translate(-50%, -50%); 
     
-    width: 100px; height: 100px; /* Sello grande e imponente */
+    width: 140px; height: 140px; /* Sello grande e imponente */
     background: var(--wax-red); 
     border-radius: 50%; 
     
