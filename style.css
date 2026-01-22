@@ -205,7 +205,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .intro-phrase { font-size: 3rem; margin-bottom: 100px; color: white; line-height: 1.5; }
 .parents-cards-layout { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
 .parent-card { background: rgba(255,255,255,0.1); padding: 20px 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; }
-.parent-card p { font-size: 1rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
+.parent-card p { font-size: 0.8rem; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
 .decorative-line { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
 
 /* --- PADRINOS SLIDER (ESTILO CARD PROFESIONAL) --- */
@@ -240,7 +240,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 }
 .gp-slide-role {
     font-family: 'Tenor Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     letter-spacing: 3px;
     color: var(--brown-gold);
     text-transform: uppercase;
