@@ -67,18 +67,122 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     line-height: 1.4;
 }
 
-/* SOBRE VIRTUAL */
-.envelope-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: url('portada.jpeg') center/cover; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: transform 1.2s ease-in-out; }
-.envelope-overlay::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
-.envelope-overlay.opened { transform: translateY(-120%); }
-.envelope-body { width: 350px; height: 250px; background: #eae5de; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
-.envelope-front { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: #f4f1ed; clip-path: polygon(0 100%, 50% 50%, 100% 100%); z-index: 2; }
-.envelope-flap { position: absolute; top: 0; left: 0; width: 100%; height: 50%; background: #e0dcd5; clip-path: polygon(0 0, 50% 100%, 100% 0); z-index: 4; transform-origin: top; transition: transform 0.6s ease; }
-.envelope-overlay.opened .envelope-flap { transform: rotateX(180deg); opacity: 0; }
-.wax-seal-btn { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: var(--wax-red); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; z-index: 10; border: 3px solid rgba(255,255,255,0.2); transition: transform 0.3s; }
-.wax-seal-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
-.wax-seal-btn span { font-family: 'Tenor Sans'; color: white; font-size: 1.5rem; font-weight: bold; }
-.tap-text { position: absolute; bottom: -60px; color: white; font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 2px; animation: pulse 2s infinite; }
+/* =========================================
+   4. SOBRE VIRTUAL (VERTICAL / PANTALLA COMPLETA)
+   ========================================= */
+.envelope-overlay { 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100vh; 
+    background: url('portada.jpeg') center/cover; /* Fondo desenfocado */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 9999; 
+    transition: transform 1.2s ease-in-out; 
+}
+
+.envelope-overlay::before { 
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(0,0,0,0.5); /* Oscurecer un poco el fondo */
+    backdrop-filter: blur(5px); /* Efecto borroso elegante */
+}
+
+/* Animación de apertura: Se va hacia arriba */
+.envelope-overlay.opened { 
+    transform: translateY(-120%); 
+}
+
+/* --- CUERPO DEL SOBRE VERTICAL --- */
+.envelope-body { 
+    width: 320px;   /* Ancho ideal para celulares */
+    height: 480px;  /* ALTO (Vertical) - Abarca más pantalla */
+    background: #eae5de; 
+    position: relative; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6); /* Sombra fuerte para profundidad */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 2px;
+}
+
+/* Frente del sobre (Bolsillo) */
+.envelope-front { 
+    position: absolute; 
+    bottom: 0; left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: #f4f1ed; 
+    /* Corte en V para sobre vertical */
+    clip-path: polygon(0 100%, 0 40%, 50% 65%, 100% 40%, 100% 100%); 
+    z-index: 2; 
+    border-radius: 0 0 2px 2px;
+}
+
+/* Solapa superior */
+.envelope-flap { 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; 
+    height: 220px; /* Solapa más larga para formato vertical */
+    background: #e0dcd5; 
+    /* Triángulo de la solapa */
+    clip-path: polygon(0 0, 50% 100%, 100% 0); 
+    z-index: 4; 
+    transform-origin: top; 
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+    border-radius: 2px 2px 0 0;
+}
+
+/* Efecto al abrir: La solapa gira */
+.envelope-overlay.opened .envelope-flap { 
+    transform: rotateX(180deg); 
+    opacity: 0; 
+}
+
+/* Botón de Sello de Cera */
+.wax-seal-btn { 
+    position: absolute; 
+    top: 55%; /* Ajustado para que quede justo en la punta de la solapa */
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 90px; height: 90px; /* Un poco más grande */
+    background: var(--wax-red); 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4); 
+    cursor: pointer; 
+    z-index: 10; 
+    border: 4px solid rgba(255,255,255,0.2); 
+    transition: transform 0.3s; 
+}
+
+.wax-seal-btn:hover { 
+    transform: translate(-50%, -50%) scale(1.1); 
+}
+
+.wax-seal-btn span { 
+    font-family: 'Tenor Sans'; 
+    color: white; 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+}
+
+.tap-text { 
+    position: absolute; 
+    bottom: -50px; 
+    color: white; 
+    font-family: 'Montserrat'; 
+    font-size: 0.9rem; 
+    letter-spacing: 2px; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    animation: pulse 2s infinite; 
+}
+
 
 /* SECCIONES PRINCIPALES */
 .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; background: url('portada.jpeg') center/cover no-repeat; }
