@@ -71,124 +71,95 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
    4. SOBRE VIRTUAL (PANTALLA COMPLETA TOTAL)
    ========================================= */
 
-.envelope-overlay { 
-    position: fixed; 
-    top: 0; left: 0; 
-    width: 100%; height: 100vh; 
-    z-index: 9999; 
-    /* Fondo oscuro por si acaso, pero el sobre lo tapará todo */
-    background: #111; 
-    display: flex; 
-    justify-content: center; 
+/* =========================================
+   ESTILO DEL SOBRE (IMAGEN CARTA.JPEG)
+   ========================================= */
+
+.envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff; /* Fondo blanco mientras carga la imagen */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); /* Animación muy suave */
+    z-index: 9999;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* Animación de apertura: Se desliza hacia arriba */
-.envelope-overlay.opened { 
-    transform: translateY(-100%); 
+/* Animación al abrir (se desliza hacia arriba) */
+.envelope-overlay.opened {
+    transform: translateY(-100%);
 }
 
-/* EL CUERPO DEL SOBRE AHORA ES LA PANTALLA */
-.envelope-body { 
-    width: 100%; 
-    height: 100%; 
-    max-width: 600px; /* En PC se verá como un celular grande */
-    background: #eae5de; /* Color Papel */
-    position: relative; 
-    overflow: hidden; /* Importante para cortes limpios */
-    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Sombra lateral en PC */
+.envelope-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 600px; /* Tamaño máximo para tablets/PC */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* --- SOLAPA SUPERIOR (TRIÁNGULO ARRIBA) --- */
-.envelope-flap { 
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; 
-    height: 40%; /* La solapa baja hasta el 40% de la pantalla */
-    background: #e0dcd5; /* Un tono un poco más oscuro para dar profundidad */
+.envelope-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra toda la pantalla */
+    pointer-events: none; /* Evita que la imagen interfiera con el clic en el botón */
+}
+
+/* BOTÓN DEL SELLO (Ajustado sobre la imagen) */
+.wax-seal-btn {
+    position: absolute;
+    /* Ajusta este porcentaje si el sello de la foto queda más arriba o abajo */
+    top: 65%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
     
-    /* Forma de triángulo invertido */
-    clip-path: polygon(0 0, 50% 100%, 100% 0); 
+    width: 130px; 
+    height: 130px;
+    background: var(--wax-red);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    z-index: 4; 
-    transform-origin: top; 
-    transition: transform 1s ease-in-out; 
-    
-    /* Sombra sutil debajo de la solapa */
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border: 3px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
 }
 
-/* Efecto al abrir: La solapa gira hacia arriba */
-.envelope-overlay.opened .envelope-flap { 
-    transform: rotateX(180deg); 
-    opacity: 0; 
+.wax-seal-btn:hover {
+    transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* --- BOLSILLO INFERIOR (DONDE ENTRA LA CARTA) --- */
-.envelope-front { 
-    position: absolute; 
-    bottom: 0; left: 0; 
-    width: 100%; 
-    height: 65%; /* Sube hasta cubrir parte de la solapa */
-    background: #f4f1ed; /* Tono más claro del papel */
-    
-    /* Corte en "V" para que parezca sobre real */
-    clip-path: polygon(0 100%, 0 10%, 50% 40%, 100% 10%, 100% 100%); 
-    
-    z-index: 2; 
+.wax-seal-btn span {
+    font-family: 'Tenor Sans', sans-serif;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: bold;
 }
 
-/* --- SELLO DE CERA --- */
-.wax-seal-btn { 
-    position: absolute; 
-    top: 40%; /* Justo en la punta de la solapa (coincide con el height de flap) */
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    
-    width: 140px; height: 140px; /* Sello grande e imponente */
-    background: var(--wax-red); 
-    border-radius: 50%; 
-    
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
-    cursor: pointer; 
-    z-index: 10; 
-    border: 4px solid rgba(255,255,255,0.15); 
-    transition: transform 0.3s, box-shadow 0.3s; 
-}
-
-.wax-seal-btn:hover { 
-    transform: translate(-50%, -50%) scale(1.05); 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-}
-
-.wax-seal-btn span { 
-    font-family: 'BrittanySignature'; 
-    color: white; 
-    font-size: 2.2rem; 
-    font-weight: bold; 
-    letter-spacing: 2px;
-}
-
-/* Texto "Toca para abrir" */
-.tap-text { 
-    position: absolute; 
-    bottom: 50px; /* Elevado para que se vea bien en el papel */
-    left: 0; 
+.tap-text {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
     width: 100%;
     text-align: center;
-    color: #8a7f70; /* Color tinta suave, no blanco */
-    font-family: 'Montserrat'; 
-    font-size: 0.8rem; 
-    letter-spacing: 4px; 
+    color: #444; /* Color gris oscuro para que sea legible sobre blanco */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    animation: pulse 2s infinite; 
-    z-index: 5;
+    animation: pulse 2s infinite;
 }
+
+
 
 
 
