@@ -255,7 +255,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 }
 .gp-slide-name {
     font-family: 'Tenor Sans', sans-serif; /* Nombres entendibles */
-    font-size: 1.6rem;
+    font-size: 1rem;
     color: var(--green-dark);
     margin: 0;
     line-height: 1.6;
