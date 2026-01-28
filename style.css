@@ -596,3 +596,42 @@ footer {
     }
 }
 
+
+
+
+/* --- AJUSTES DE TIPOGRAFÍA PARA DETAILS BLOCKS --- */
+
+/* Agrupa el título (Imprenta + Cursiva) */
+.detail-header-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px; /* Espacio antes de la línea vertical */
+    line-height: 1;
+}
+
+/* Ajuste específico para la cursiva dentro de las tarjetas */
+.custom-detail-title {
+    font-size: 3.5rem !important; /* Tamaño grande como en la foto */
+    color: var(--green-forest);   /* Color verde elegante */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+/* Ajuste para la letra pequeña de arriba (CEREMONIA, CÓDIGO DE) */
+.detail-header-group .mix-top {
+    margin-bottom: 0; /* Quitar margen extra para que estén pegaditos */
+    color: #888;      /* Un gris suave o dorado si prefieres */
+    font-size: 0.8rem;
+}
+
+/* Aseguramos que la línea vertical tenga buen espacio */
+.detail-vertical-line {
+    width: 1px;
+    height: 40px;
+    background: var(--brown-gold);
+    opacity: 0.4;
+    margin: 10px 0 20px 0; /* Espaciado arriba y abajo de la línea */
+}
+
