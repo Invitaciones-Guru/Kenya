@@ -131,7 +131,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .mag-month-year { display: flex; flex-direction: column; text-align: left; justify-content: center; }
 .mag-month-year span:nth-child(1) { font-size: 1.2rem; color: var(--green-dark); letter-spacing: 2px; line-height: 1; }
 .mag-month-year span:nth-child(2) { font-size: 1rem; color: var(--brown-gold); letter-spacing: 4px; margin-top: 5px; }
-.mag-std p { font-size: 3rem !important; color: var(--green-forest); margin: 10px 0 30px 0; line-height: 2; position: relative; transform: translateX(-15px); }
+.mag-std p { font-size: 3rem !important; color: var(--green-forest); margin: 10px 0 30px 0; line-height: 3; position: relative; transform: translateX(-15px); }
 .mag-timer { display: flex; justify-content: center; gap: 15px; width: 100%; flex-wrap: wrap; }
 .time-col span { display: block; font-size: 1.5rem; line-height: 1; color: var(--text-dark); font-weight: 500; }
 .time-col small { font-size: 0.6rem; letter-spacing: 1px; opacity: 0.6; color: var(--text-dark); margin-top: 5px; display: block; }
@@ -142,7 +142,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .story-content { background: white; padding: 60px 40px; max-width: 500px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); width: 100%; }
 .story-est { font-size: 0.8rem; letter-spacing: 3px; display: block; margin: 10px 0 20px; color: var(--brown-gold); }
 .story-text { font-size: 1.1rem; line-height: 1.6; color: #555; }
-.signature { font-size: 3rem; color: var(--brown-gold); margin-top: 30px; line-height: 1.5; }
+.signature { font-size: 1.5rem; color: var(--brown-gold); margin-top: 30px; line-height: 1.5; }
 
 /* ITINERARIO */
 .itinerary-section { padding: 80px 0; background: white; }
