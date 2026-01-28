@@ -258,3 +258,341 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     .vertical-gold-line { width: 1px; height: 120px; margin-top: 20px; }
     .main-name { font-size: 6rem; }
 }
+
+/* =========================================
+   5. GALERÍA (MOMENTOS INOLVIDABLES)
+   ========================================= */
+.gallery-section { 
+    padding: 80px 10px; 
+    text-align: center; 
+    background: var(--bg-cream); 
+}
+
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en celular */
+    gap: 15px; 
+    margin-top: 40px; 
+    max-width: 1000px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.g-item img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 2px; 
+    transition: transform 0.5s ease, filter 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.g-item:hover img { 
+    transform: scale(1.02); 
+    filter: brightness(1.1);
+}
+
+
+/* =========================================
+   6. MESA DE REGALOS
+   ========================================= */
+.gifts-section { 
+    padding: 100px 20px; 
+    background: white; 
+    text-align: center; 
+}
+
+.gift-intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.gift-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    align-items: center; 
+}
+
+.gift-box { 
+    border: 1px solid var(--brown-gold); 
+    padding: 50px 30px; 
+    width: 100%; 
+    max-width: 400px; 
+    background: #fff; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+/* Efecto elegante al pasar mouse */
+.gift-box:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 40px rgba(103, 50, 60, 0.1); 
+}
+
+.icon-box-md {
+    margin-bottom: 20px;
+    color: var(--brown-gold);
+}
+.icon-svg-md { width: 50px; height: 50px; fill: currentColor; }
+
+.gift-title { 
+    font-size: 1.4rem; 
+    letter-spacing: 2px; 
+    margin-bottom: 15px; 
+    color: var(--text-dark);
+}
+
+.bank-text { 
+    font-size: 0.95rem; 
+    color: #555; 
+    line-height: 1.6; 
+    margin-bottom: 25px; 
+}
+
+/* Botones */
+.btn-outline { 
+    background: transparent; 
+    border: 1px solid var(--brown-gold); 
+    color: var(--brown-gold); 
+    padding: 12px 30px; 
+    cursor: pointer; 
+    letter-spacing: 2px; 
+    font-size: 0.8rem; 
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--brown-gold);
+    color: white;
+}
+
+.btn-solid { 
+    background: var(--brown-gold); 
+    color: white; 
+    padding: 12px 35px; 
+    text-decoration: none; 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+    display: inline-block; 
+    transition: opacity 0.3s;
+}
+
+.btn-solid:hover { opacity: 0.8; }
+
+
+/* =========================================
+   7. LIBRO DE VISITAS
+   ========================================= */
+.guestbook-section { 
+    padding: 100px 20px; 
+    background: var(--bg-cream); 
+    text-align: center; 
+}
+
+.messages-slider { 
+    display: flex; 
+    gap: 20px; 
+    overflow-x: auto; 
+    padding: 20px 0 40px 0; 
+    justify-content: flex-start; /* Para scroll horizontal en móvil */
+    scrollbar-width: none; /* Ocultar barra scroll Firefox */
+}
+.messages-slider::-webkit-scrollbar { display: none; } /* Ocultar barra Chrome */
+
+.msg-card { 
+    background: white; 
+    padding: 40px 30px; 
+    min-width: 300px; 
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border-radius: 4px;
+}
+
+.msg-card p { 
+    font-family: 'Tenor Sans', sans-serif; 
+    font-style: italic; 
+    font-size: 1.1rem; 
+    color: #444; 
+    margin-bottom: 15px;
+}
+
+.msg-card span {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--brown-gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-text { 
+    display: inline-block; 
+    margin-top: 20px; 
+    text-decoration: none; 
+    color: var(--brown-gold); 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    letter-spacing: 2px; 
+    border-bottom: 1px solid var(--brown-gold); 
+    padding-bottom: 3px;
+}
+
+
+/* =========================================
+   8. ÁLBUM DIGITAL
+   ========================================= */
+.album-section { 
+    padding: 100px 20px; 
+    background: white; 
+}
+
+.album-container { 
+    border: 1px solid var(--brown-gold); 
+    padding: 15px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    background: white; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.album-content { 
+    border: 1px solid var(--brown-gold); 
+    padding: 60px 20px; 
+    text-align: center; 
+}
+
+.album-heading { 
+    font-size: 2.2rem; 
+    letter-spacing: 3px; 
+    margin-bottom: 10px; 
+    color: var(--text-dark);
+}
+
+.qr-frame { 
+    margin: 30px auto; 
+    width: 180px; 
+    padding: 10px; 
+    border: 1px dashed #ccc; 
+    background: white;
+}
+.qr-code { width: 100%; display: block; }
+
+.btn-black { 
+    background: var(--text-dark); 
+    color: white; 
+    text-decoration: none; 
+    padding: 15px 40px; 
+    font-size: 0.8rem; 
+    letter-spacing: 3px; 
+    display: inline-block; 
+    font-weight: 500; 
+    transition: background 0.3s;
+}
+.btn-black:hover { background: #4a242b; }
+
+
+/* =========================================
+   9. RSVP (CONFIRMACIÓN)
+   ========================================= */
+.rsvp-section { 
+    padding: 100px 20px; 
+    background: url('foto3.jpeg') center/cover fixed; 
+    display: flex; 
+    justify-content: center; 
+    position: relative; 
+}
+
+/* Capa de color verde encima de la foto */
+.rsvp-section::before { 
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(167, 179, 167, 0.9); /* Verde Forest (var green-forest) con opacidad */
+}
+
+.rsvp-wrapper { 
+    position: relative; 
+    z-index: 2; 
+    background: white; 
+    padding: 60px 30px; 
+    max-width: 500px; 
+    width: 100%; 
+    text-align: center; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3); 
+    border-radius: 4px;
+}
+
+.rsvp-deadline {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Inputs bonitos */
+.rsvp-form .input-group { margin-bottom: 20px; }
+
+.rsvp-form input, 
+.rsvp-form select { 
+    width: 100%; 
+    padding: 15px; 
+    border: none;
+    border-bottom: 1px solid #ccc; 
+    background: transparent; 
+    font-family: 'Tenor Sans'; 
+    font-size: 1rem; 
+    outline: none; 
+    transition: border-color 0.3s;
+    color: #333;
+}
+
+.rsvp-form input:focus, 
+.rsvp-form select:focus {
+    border-bottom-color: var(--brown-gold);
+}
+
+.btn-gold { 
+    width: 100%; 
+    background: var(--brown-gold); 
+    color: white; 
+    padding: 18px; 
+    border: none; 
+    font-size: 0.9rem; 
+    letter-spacing: 3px; 
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: background 0.3s; 
+    font-family: 'Tenor Sans'; 
+    margin-top: 20px;
+}
+
+.btn-gold:hover { 
+    background: #4e262e; 
+}
+
+/* Footer */
+footer { 
+    text-align: center; 
+    padding: 40px; 
+    background: var(--brown-gold); 
+    color: rgba(255,255,255,0.8); 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+}
+
+/* MEDIA QUERIES PARA ESTAS SECCIONES */
+@media (min-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    
+    .gift-grid { 
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: stretch;
+    }
+    
+    .messages-slider { 
+        justify-content: center; 
+    }
+}
+
