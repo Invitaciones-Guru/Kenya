@@ -716,3 +716,25 @@ footer {
 /* Las clases anteriores como .icon-svg-sm ya no son necesarias para esto, 
    pero puedes dejarlas si las usas en otro lado. */
 
+
+/* Busca esto en style.css y REEMPLÁZALO o pégalo al final */
+
+.detail-card { 
+    background: white; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+    width: 100%; 
+    max-width: 900px; 
+    
+    /* ESTOS SON LOS CAMBIOS NUEVOS: */
+    border-radius: 20px;   /* Redondea las esquinas */
+    overflow: hidden;      /* Asegura que la foto no se salga del redondeado */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Suaviza la animación */
+}
+
+/* Animación al pasar el mouse */
+.detail-card:hover {
+    transform: translateY(-10px); /* Se eleva */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Sombra más fuerte */
+}
+
+
