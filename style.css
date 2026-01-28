@@ -9,7 +9,7 @@
     font-style: normal;
 }
 
-/* Forzamos todo lo que era cursiva a Brittany */
+/* Forzamos todo lo cursivo a Brittany */
 .font-brittany,
 .font-alex, 
 .mix-bottom, 
@@ -25,7 +25,6 @@
     line-height: 1.5; 
 }
 
-/* Poppins para cuerpos de texto específicos */
 .font-poppins {
     font-family: 'Poppins', sans-serif !important;
 }
@@ -40,7 +39,7 @@ p, h1, h2, h3, span {
 }
 
 /* =========================================
-   2. ESTILOS GENERALES Y PALETA
+   2. ESTILOS GENERALES
    ========================================= */
 :root {
     --bg-cream: #f3ece8;
@@ -55,6 +54,7 @@ html { scroll-behavior: smooth; }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow-x: hidden; }
 
+/* Títulos "Encimados" */
 .section-header-clean {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     margin-bottom: 30px; text-align: center;
@@ -67,58 +67,32 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     text-transform: uppercase;
 }
 .mix-bottom {
-    font-size: 4rem; 
+    font-size: 4rem; /* Tamaño grande para Brittany */
     color: var(--brown-gold);
     z-index: 1;
     position: relative;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 /* =========================================
    3. CARTA DE INICIO (PANTALLA COMPLETA)
    ========================================= */
 .envelope-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #000;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 1s ease-in-out;
-    overflow: hidden;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: #000; z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer; transition: transform 1s ease-in-out; overflow: hidden;
 }
-
-.envelope-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center;
-}
-
+.envelope-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .tap-text-overlay {
-    position: absolute;
-    bottom: 50px;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    animation: pulse 2s infinite;
-    pointer-events: none;
+    position: absolute; bottom: 50px; color: white;
+    font-family: 'Poppins', sans-serif; font-size: 0.9rem;
+    letter-spacing: 2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    animation: pulse 2s infinite; pointer-events: none;
 }
+.envelope-overlay.opened { transform: translateY(-100%); }
 
-.envelope-overlay.opened {
-    transform: translateY(-100%);
-}
-
-/* =========================================
-   4. SECCIONES PRINCIPALES
-   ========================================= */
+/* SECCIONES PRINCIPALES */
 .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; background: url('portada.jpeg') center/cover no-repeat; }
 .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); }
 .names-container { position: relative; z-index: 2; padding: 20px; width: 100%; }
@@ -170,11 +144,6 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .story-text { font-size: 1.1rem; line-height: 1.6; color: #555; }
 .signature { font-size: 3rem; color: var(--brown-gold); margin-top: 30px; line-height: 1.5; }
 
-/* GALERÍA */
-.gallery-section { padding: 80px 10px; text-align: center; background: var(--bg-cream); }
-.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px; max-width: 1000px; margin: 30px auto; }
-.g-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; transition: transform 0.5s ease; }
-
 /* ITINERARIO */
 .itinerary-section { padding: 80px 0; background: white; }
 .timeline-container { position: relative; max-width: 500px; margin: 0 auto 60px; text-align: center; width: 100%; }
@@ -187,7 +156,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .tl-content p { font-family: 'Tenor Sans', sans-serif; font-size: 0.9rem; letter-spacing: 1px; color: #555; margin: 0; line-height: 1.4; }
 .tl-icon { font-size: 1.5rem; margin-bottom: 5px; background: white; padding: 0 5px; z-index: 3; position: relative; }
 
-/* DETALLES ARREGLADOS */
+/* --- BLOQUES DE DETALLES (DISEÑO VERTICAL) --- */
 .details-blocks { 
     background: var(--bg-cream); 
     padding: 60px 20px; 
@@ -202,7 +171,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
     width: 100%; 
     max-width: 900px; 
-    overflow: hidden; /* Asegura que la imagen no se salga */
+    overflow: hidden; 
 }
 
 .detail-img img { 
@@ -212,12 +181,50 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     display: block; 
 }
 
-.detail-info { 
-    padding: 40px 30px; 
-    text-align: center; 
+/* Nuevo contenedor para la info vertical */
+.detail-info-vertical {
+    padding: 50px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre elementos */
 }
 
-.venue { font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 20px; }
+/* Título de arriba (CEREMONIA) */
+.detail-title {
+    font-size: 1.5rem;
+    color: var(--green-forest);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* La línea vertical separadora */
+.detail-vertical-line {
+    width: 1px;
+    height: 40px; /* Altura de la línea */
+    background: var(--brown-gold);
+    opacity: 0.5;
+}
+
+/* Grupo de abajo (Nombre + Botón) */
+.detail-bottom-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.venue-name {
+    font-size: 1.2rem;
+    color: var(--brown-gold);
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
 .btn-line { text-decoration: none; color: black; border-bottom: 1px solid var(--brown-gold); font-size: 0.7rem; letter-spacing: 2px; }
 
 /* INFO IMPORTANTE */
@@ -231,16 +238,8 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .detail-desc { font-size: 0.95rem; line-height: 1.8; color: #666; max-width: 300px; }
 .vertical-gold-line { width: 100px; height: 1px; background: var(--brown-gold); opacity: 0.3; }
 
-/* Resto de secciones iguales */
-.music-player { position: fixed; top: 20px; right: 20px; background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.icon-svg-sm { width: 24px; height: 24px; fill: var(--green-forest); }
-.icon-svg-md { width: 40px; height: 40px; fill: var(--brown-gold); }
-@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
-footer { text-align: center; padding: 30px; background: var(--green-dark); color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 1px; }
-
-/* MEDIA QUERIES PARA DETALLES */
+/* MEDIA QUERIES */
 @media (min-width: 768px) {
-    /* Layout Horizontal para las Tarjetas de Detalles en PC */
     .detail-card { 
         display: grid; 
         grid-template-columns: 1fr 1fr; 
@@ -249,13 +248,12 @@ footer { text-align: center; padding: 30px; background: var(--green-dark); color
     .detail-card.reverse { 
         direction: rtl; 
     }
-    .detail-card.reverse .detail-info { 
+    .detail-card.reverse .detail-info-vertical { 
         direction: ltr; 
     }
     
-    .detail-img img { height: 100%; min-height: 350px; }
-
-    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    .detail-img img { height: 100%; min-height: 400px; }
+    
     .details-content-grid { flex-direction: row; align-items: flex-start; justify-content: center; }
     .vertical-gold-line { width: 1px; height: 120px; margin-top: 20px; }
     .main-name { font-size: 6rem; }
