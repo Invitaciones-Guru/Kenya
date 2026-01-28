@@ -4,27 +4,32 @@ const weddingDate = new Date("Aug 18, 2026 15:30:00").getTime();
 const iconPlay = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
 const iconPause = '<svg class="icon-svg-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
-document.addEventListener('DOMContentLoaded', function() {
-    const openBtn = document.getElementById('open-btn');
+// --- FUNCIÓN PARA ABRIR LA CARTA (ONCLICK) ---
+function abrirInvitacion() {
     const overlay = document.getElementById('envelope-overlay');
     const music = document.getElementById('weddingMusic');
     const musicBtn = document.getElementById('musicBtn');
-    let musicStarted = false;
-
-    // ABRIR SOBRE
-    openBtn.addEventListener('click', function() {
-        overlay.classList.add('opened');
-        if (!musicStarted) {
-            music.play().then(() => {
-                musicBtn.innerHTML = iconPause;
-                musicBtn.classList.add('pulse-animation');
-            }).catch(e => console.log("Autoplay bloqueado"));
-            musicStarted = true;
-        }
-        setTimeout(() => { AOS.init({ duration: 1200, easing: 'ease-out-cubic', once: true, offset: 100 }); }, 600);
+    
+    // Agrega la clase para animar hacia arriba
+    overlay.classList.add('opened');
+    
+    // Intentar reproducir música
+    music.play().then(() => {
+        musicBtn.innerHTML = iconPause;
+        musicBtn.classList.add('pulse-animation');
+    }).catch(e => {
+        console.log("Autoplay bloqueado por el navegador");
     });
 
-    // CONTROL MÚSICA
+    // Iniciar animaciones AOS un poco después de abrir
+    setTimeout(() => { AOS.init({ duration: 1200, easing: 'ease-out-cubic', once: true, offset: 100 }); }, 600);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('weddingMusic');
+    const musicBtn = document.getElementById('musicBtn');
+
+    // CONTROL MÚSICA BOTÓN
     musicBtn.addEventListener('click', () => {
         if (music.paused) {
             music.play();
