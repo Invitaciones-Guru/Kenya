@@ -635,3 +635,34 @@ footer {
     margin: 10px 0 20px 0; /* Espaciado arriba y abajo de la línea */
 }
 
+
+/* =========================================
+   EXTRAS (CORRECCIÓN ÍCONO MÚSICA)
+   ========================================= */
+.music-player { 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    background: white; 
+    width: 40px; /* El contenedor mide 40px */
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 100; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    cursor: pointer; /* Para indicar que es clicable */
+}
+
+/* --- AGREGA ESTA REGLA --- */
+/* Esto fuerza a CUALQUIER ícono (play, pausa o nota) dentro del player a ser pequeño */
+.music-player svg {
+    width: 24px !important;  /* Usamos !important para asegurar que nada lo sobrescriba */
+    height: 24px !important;
+    fill: var(--green-forest); /* Asegura el color correcto */
+}
+
+/* Las clases anteriores como .icon-svg-sm ya no son necesarias para esto, 
+   pero puedes dejarlas si las usas en otro lado. */
+
