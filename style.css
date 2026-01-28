@@ -157,41 +157,51 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 /* =========================================
    ITINERARIO (ACTUALIZADO CON SVG)
    ========================================= */
-/* Actualiza la clase contenedora */
+
+/* EN TU SECCIÓN DE ITINERARIO EN STYLE.CSS */
+
+/* Clase contenedora del ícono */
 .tl-icon { 
-    font-size: 1.5rem;
-    margin-bottom: 5px; 
-    background: white; 
-    padding: 8px; /* Un poco más de espacio */
+    /* --- CAMBIOS: Se eliminó fondo, padding, borde y sombra --- */
+    margin-bottom: 15px; /* Un poco más de espacio abajo */
     z-index: 3; 
     position: relative; 
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil al círculo blanco */
+    color: var(--brown-gold); /* El color de tu paleta */
     
-    /* IMPORTANTE: Definimos el color aquí para que el SVG lo herede */
-    color: var(--brown-gold); 
+    /* Quitamos el fondo para que quede transparente sobre la línea */
+    background: transparent; 
 }
 
-/* Actualiza la regla del SVG para íconos de LÍNEA */
+/* El ícono SVG en sí */
 .tl-icon svg {
-    width: 28px;  /* Un poco más pequeños para que se vean delicados */
-    height: 28px;
-    fill: none !important; /* Asegura que NO tengan relleno sólido */
-    stroke: currentColor;  /* Usa el color definido en el padre (.tl-icon) */
-    stroke-width: 1.5;     /* Grosor de la línea (ajustable) */
+    /* --- CAMBIO: Tamaño aumentado para mayor presencia --- */
+    width: 55px;  
+    height: 55px;
+    
+    fill: none !important; 
+    stroke: currentColor;
+    stroke-width: 1.3; /* Línea sutilmente más gruesa para definir mejor */
     transition: transform 0.3s ease;
+    
+    /* Un pequeño filtro para darle un "brillo" sutil y que resalte más */
+    filter: drop-shadow(0 2px 3px rgba(103, 50, 60, 0.2));
 }
 
-/* Efecto hover */
+/* Mantenemos la animación de flotado suave si te gustaba */
+.floating-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Ajuste del Hover para PC (opcional, más sutil) */
 .timeline-item:hover .tl-icon svg {
-    transform: scale(1.1);
+    transform: scale(1.05) translateY(-2px); 
 }
 
 
-/* ... (el resto de estilos tl-content, etc. siguen igual) ... */
+
 /* --- BLOQUES DE DETALLES (DISEÑO VERTICAL) --- */
 .details-blocks { 
     background: var(--bg-cream); 
