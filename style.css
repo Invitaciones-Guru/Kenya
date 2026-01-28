@@ -158,7 +158,11 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
    ITINERARIO (VERSIÓN IMÁGENES PNG)
    ========================================= */
 
-/* Contenedor del ícono (transparente) */
+/* EN TU SECCIÓN DE ITINERARIO EN STYLE.CSS */
+
+/* ... (las reglas .timeline-container, .timeline-item, etc. siguen igual) ... */
+
+/* Contenedor del ícono */
 .tl-icon { 
     margin-bottom: 15px; 
     z-index: 3; 
@@ -166,24 +170,23 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent; /* Sin fondo */
-    width: 80px;  /* Espacio reservado */
+    background: transparent; 
+    width: 80px; 
     height: 80px; 
 }
 
-/* Estilo para las IMÁGENES */
+/* --- AQUÍ ESTÁ EL CAMBIO (SIN SOMBRA) --- */
 .icon-img {
-    width: 65px;  /* Tamaño grande para que luzcan */
+    width: 65px;  
     height: 65px;
-    object-fit: contain; /* Asegura que la imagen no se recorte */
+    object-fit: contain; 
     
-    /* Sombra suave para darle profundidad (efecto 3D) */
-    filter: drop-shadow(0 5px 5px rgba(103, 50, 60, 0.3));
+    /* SE ELIMINÓ LA LÍNEA DE FILTER: DROP-SHADOW */
     
     transition: transform 0.3s ease;
 }
 
-/* Animación de flotado suave */
+/* Animación de flotado suave (se mantiene) */
 @keyframes float {
 	0% { transform: translateY(0px); }
 	50% { transform: translateY(-6px); }
@@ -194,13 +197,13 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     animation: float 3s ease-in-out infinite;
 }
 
-/* Efecto al pasar el mouse */
+/* Efecto al pasar el mouse (solo crece un poco, sin sombra) */
 .timeline-item:hover .icon-img {
     transform: scale(1.1);
-    filter: drop-shadow(0 8px 10px rgba(103, 50, 60, 0.4));
+    /* SE ELIMINÓ LA SOMBRA DEL HOVER TAMBIÉN */
 }
 
-
+/* ... (resto del código sigue igual) ... */
 
 
 /* --- BLOQUES DE DETALLES (DISEÑO VERTICAL) --- */
