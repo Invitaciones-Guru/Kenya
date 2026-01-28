@@ -157,37 +157,39 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 /* =========================================
    ITINERARIO (ACTUALIZADO CON SVG)
    ========================================= */
-
-/* ... (tus estilos anteriores de itinerary-section, timeline-container, etc. siguen igual) ... */
-
-/* Actualiza esta clase */
+/* Actualiza la clase contenedora */
 .tl-icon { 
-    font-size: 1.5rem; /* Ya no se usa para emojis, pero lo dejamos por si acaso */
+    font-size: 1.5rem;
     margin-bottom: 5px; 
     background: white; 
-    padding: 5px; 
+    padding: 8px; /* Un poco más de espacio */
     z-index: 3; 
     position: relative; 
-    
-    /* Nuevo: Para centrar los SVG */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%; /* Opcional: si quieres que el fondo blanco sea un círculo */
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil al círculo blanco */
+    
+    /* IMPORTANTE: Definimos el color aquí para que el SVG lo herede */
+    color: var(--brown-gold); 
 }
 
-/* --- NUEVA REGLA PARA COLOREAR LOS ÍCONOS --- */
+/* Actualiza la regla del SVG para íconos de LÍNEA */
 .tl-icon svg {
-    width: 35px;  /* Tamaño del ícono */
-    height: 35px;
-    fill: var(--brown-gold); /* ¡Aquí se aplica tu color de paleta! */
+    width: 28px;  /* Un poco más pequeños para que se vean delicados */
+    height: 28px;
+    fill: none !important; /* Asegura que NO tengan relleno sólido */
+    stroke: currentColor;  /* Usa el color definido en el padre (.tl-icon) */
+    stroke-width: 1.5;     /* Grosor de la línea (ajustable) */
     transition: transform 0.3s ease;
 }
 
-/* Opcional: Un pequeño efecto al pasar el mouse sobre el ítem */
+/* Efecto hover */
 .timeline-item:hover .tl-icon svg {
     transform: scale(1.1);
 }
+
 
 /* ... (el resto de estilos tl-content, etc. siguen igual) ... */
 /* --- BLOQUES DE DETALLES (DISEÑO VERTICAL) --- */
