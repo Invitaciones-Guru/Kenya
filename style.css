@@ -1276,52 +1276,79 @@ footer {
 
 
 /* =========================================
-   FOTOS ELEGANTES FUERA DEL CUADRO DE TEXTO
+   DISEÑO EDITORIAL (FOTOS + TEXTO UNIDO)
    ========================================= */
 
-/* Contenedor para centrar y separar las fotos */
-.photos-outside-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* Espacio entre las fotos */
-    margin-top: 60px; /* Espacio considerable desde el cuadro de texto */
+.msg-editorial-section {
+    padding: 80px 20px;
+    background-color: var(--bg-cream);
 }
 
-/* Estilo de cada foto individual */
-.elegant-photo {
-    width: 180px;      /* Un buen tamaño vertical */
-    height: 250px;     /* Formato retrato elegante */
-    
+/* La tarjeta contenedora principal */
+.editorial-card {
+    background: white;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex; /* Esto pone fotos y texto lado a lado */
+    flex-direction: column; /* En celular empieza vertical */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* --- ÁREA DE FOTOS --- */
+.editorial-visuals {
+    display: flex;
+    height: 300px; /* Altura en celular */
+}
+
+.ed-photo {
+    flex: 1; /* Cada foto ocupa el 50% */
     background-size: cover;
     background-position: center;
-    
-    border-radius: 6px; /* Esquinas suaves */
-    
-    /* Sombra suave para darle profundidad */
-    box-shadow: 0 15px 35px rgba(103, 50, 60, 0.15); 
-    
-    /* Borde blanco fino tipo fotografía */
-    border: 4px solid white;
-    
-    transition: all 0.4s ease;
+    transition: transform 0.5s ease;
 }
 
-/* Efecto de elevación al pasar el mouse */
-.elegant-photo:hover {
-    transform: translateY(-15px); /* Se levanta */
-    box-shadow: 0 25px 50px rgba(103, 50, 60, 0.25); /* Sombra más intensa */
+/* Efecto bonito: al pasar el mouse sobre la tarjeta, las fotos se acercan lento */
+.editorial-card:hover .ed-photo {
+    transform: scale(1.05);
 }
 
-/* Ajuste para celulares para que no queden gigantes */
-@media (max-width: 768px) {
-    .photos-outside-container {
-        gap: 15px;
-        margin-top: 40px;
+/* --- ÁREA DE TEXTO --- */
+.editorial-content {
+    padding: 50px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: white;
+    z-index: 2; /* Para tapar el zoom de las fotos si se salen */
+}
+
+/* Un borde interno dorado para mantener la elegancia */
+.ed-text-wrapper {
+    border: 1px solid var(--brown-gold);
+    padding: 30px 20px;
+    width: 100%;
+    position: relative;
+}
+
+/* --- VERSIÓN COMPUTADORA (PANTALLA GRANDE) --- */
+@media (min-width: 768px) {
+    .editorial-card {
+        flex-direction: row; /* Pone las fotos a la izquierda y texto a la derecha */
+        min-height: 450px;
     }
-    .elegant-photo {
-        width: 140px;
-        height: 200px;
+
+    .editorial-visuals {
+        width: 45%; /* Las fotos ocupan el 45% del ancho */
+        height: auto; /* Altura automática (se estira con el texto) */
+        flex-direction: column; /* Una foto arriba de la otra para llenar el alto */
+    }
+    
+    .editorial-content {
+        width: 55%; /* El texto ocupa el resto */
+        padding: 60px;
     }
 }
-
-
