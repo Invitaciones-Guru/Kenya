@@ -353,7 +353,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 }
 
 .gift-intro {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     color: #666;
     margin-bottom: 50px;
 }
