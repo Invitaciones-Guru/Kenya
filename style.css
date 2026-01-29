@@ -1352,3 +1352,32 @@ footer {
         padding: 60px;
     }
 }
+
+/* ESTILOS PARA LAS FOTOS AL FINAL DEL MENSAJE */
+
+.photos-end-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Separación entre fotos */
+    margin-top: 40px; /* Separación del divisor dorado */
+}
+
+.end-photo {
+    width: 150px;  /* Ancho de la foto */
+    height: 200px; /* Alto de la foto (formato vertical) */
+    object-fit: cover; /* Para que la foto se recorte bien sin deformarse */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+    border: 4px solid white; /* Marco blanco tipo foto */
+    outline: 1px solid #ddd; /* Borde gris sutil fuera del blanco */
+}
+
+/* Ajuste para celulares pequeños */
+@media (max-width: 400px) {
+    .end-photo {
+        width: 120px;
+        height: 160px;
+    }
+}
+
+
