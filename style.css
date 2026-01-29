@@ -750,3 +750,92 @@ footer {
 }
 
 
+
+/* =========================================
+   NUEVOS ESTILOS PARA MENSAJES Y FOTOS
+   ========================================= */
+
+/* Sección de mensaje emocional */
+.emotional-msg-section {
+    padding: 80px 20px;
+    background: #fff; /* Fondo blanco limpio */
+    text-align: center;
+}
+
+.emotional-msg-section.alt-bg {
+    background: var(--bg-cream); /* Fondo crema alternativo */
+}
+
+.msg-box {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+/* Decoración sutil de comillas o líneas (opcional) */
+.msg-box::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--brown-gold);
+    margin: 0 auto 30px auto;
+    opacity: 0.5;
+}
+
+.msg-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: var(--text-dark);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Sección de Padres arreglada */
+.parents-list-section {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+.decorative-line-dark {
+    width: 1px;
+    height: 50px;
+    background: var(--brown-gold);
+    opacity: 0.3;
+}
+
+/* Grid de 3 imágenes (Collage antes de RSVP) */
+.collage-3-imgs {
+    display: grid;
+    grid-template-columns: 1fr; /* Móvil: 1 columna */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px; /* Un toque suave */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Versión escritorio para el collage */
+@media (min-width: 768px) {
+    .collage-3-imgs {
+        grid-template-columns: repeat(3, 1fr); /* PC: 3 columnas */
+    }
+    
+    /* Hacemos la del medio un poco más alta para que se vea dinámico (opcional) */
+    .collage-item:nth-child(2) img {
+        height: 400px; 
+        margin-top: -25px;
+    }
+}
