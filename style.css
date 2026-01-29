@@ -561,6 +561,18 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     background: rgba(167, 179, 167, 0.9); /* Verde Forest (var green-forest) con opacidad */
 }
 
+/* Estilo para el título "Confirmación" */
+.rsvp-title {
+    font-size: 3rem;       /* Tamaño grande y legible */
+    margin: 0;
+    
+    /* Estos dos son CLAVE para que no se corte la letra abajo */
+    line-height: 1.4;
+    padding-bottom: 15px;
+    
+    text-align: center;
+}
+
 .rsvp-wrapper { 
     position: relative; 
     z-index: 2; 
