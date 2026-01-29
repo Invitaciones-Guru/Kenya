@@ -1274,3 +1274,39 @@ footer {
     }
 }
 
+
+/* =========================================
+   ESTILO FOTOS EN MENSAJE (MSG-SECTION)
+   ========================================= */
+
+.couple-photos-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre las dos fotos */
+    margin-bottom: 20px;
+}
+
+.cp-photo {
+    width: 140px;      /* Ancho de cada foto */
+    height: 190px;     /* Alto (formato vertical elegante) */
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+    border: 1px solid #eee; /* Borde muy sutil */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.cp-photo:hover {
+    transform: scale(1.03);
+}
+
+/* Ajuste para celulares muy pequeños */
+@media (max-width: 400px) {
+    .cp-photo {
+        width: 120px;
+        height: 160px;
+    }
+}
+
