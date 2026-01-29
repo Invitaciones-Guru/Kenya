@@ -1025,3 +1025,86 @@ footer {
     .glass-title { font-size: 2.8rem !important; }
 }
 
+/* =========================================
+   NUEVO DISEÑO: MENSAJE 1 (TARJETA CON MARCO)
+   ========================================= */
+
+.msg-section-framed {
+    padding: 100px 20px;
+    background-color: var(--bg-cream); /* Fondo crema para contrastar con la tarjeta */
+    display: flex;
+    justify-content: center;
+}
+
+.msg-card-frame {
+    background: white;
+    padding: 60px 40px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    
+    /* El marco dorado elegante */
+    border: 1px solid var(--brown-gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05); /* Sombra suave para elevarlo */
+    
+    /* Efecto de "doble borde" usando outline */
+    outline: 1px solid rgba(103, 50, 60, 0.2); /* Un segundo borde más suave */
+    outline-offset: -10px; /* Mete el segundo borde hacia adentro */
+}
+
+/* Adorno de estrella arriba */
+.frame-icon {
+    display: block;
+    color: var(--brown-gold);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Texto introductorio en mayúsculas (Tenor) */
+.msg-intro-caps {
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--brown-gold);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Texto principal (Poppins) */
+.msg-body-text {
+    font-size: 0.95rem; /* Tamaño elegante, no muy grande */
+    line-height: 2;      /* Mucho espacio entre líneas para elegancia */
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Pequeña línea divisoria */
+.gold-divider-short {
+    width: 40px;
+    height: 1px;
+    background: var(--brown-gold);
+    margin: 20px auto;
+    opacity: 0.4;
+}
+
+/* Firma cursiva al final */
+.msg-signoff {
+    font-size: 2.5rem !important;
+    color: var(--brown-gold);
+    margin-top: 30px;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .msg-card-frame {
+        padding: 40px 25px; /* Menos relleno en celular */
+        outline-offset: -8px;
+    }
+}
+
