@@ -590,7 +590,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
     border: none;
     border-bottom: 1px solid #ccc; 
     background: transparent; 
-    font-family: 'Tenor Sans'; 
+    font-family: 'Poppins'; 
     font-size: 1rem; 
     outline: none; 
     transition: border-color 0.3s;
@@ -671,7 +671,7 @@ footer {
 
 /* Ajuste para la letra pequeña de arriba (CEREMONIA, CÓDIGO DE) */
 .detail-header-group .mix-top {
-    margin-bottom: 0; /* Quitar margen extra para que estén pegaditos */
+    margin-bottom: 1; /* Quitar margen extra para que estén pegaditos */
     color: #888;      /* Un gris suave o dorado si prefieres */
     font-size: 0.8rem;
 }
