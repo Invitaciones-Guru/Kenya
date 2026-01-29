@@ -1128,3 +1128,44 @@ footer {
     }
 }
 
+/* =========================================
+   ESTILO PARA LA FOTO/MEME DE HISTORIA
+   ========================================= */
+
+/* El contenedor para separar la foto del texto */
+.story-meme-container {
+    margin: 35px 0; /* Espacio arriba y abajo */
+    text-align: center; /* Centrar la imagen */
+    position: relative;
+    z-index: 2; /* Asegura que quede por encima */
+}
+
+/* Estilo de la imagen "tipo foto impresa" */
+.story-meme-img {
+    max-width: 100%; /* Que no se salga en celulares */
+    width: 320px;    /* Un tamaño ideal para que se aprecie pero no invada */
+    height: auto;
+    
+    /* El marco blanco tipo fotografía */
+    border: 8px solid #fff; 
+    
+    /* Esquinas ligeramente redondeadas */
+    border-radius: 3px;
+    
+    /* Sombra suave para darle profundidad */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    
+    /* Una ligera inclinación para que se vea natural y divertida */
+    transform: rotate(-3deg);
+    
+    /* Suavizar la animación al pasar el mouse */
+    transition: all 0.4s ease;
+}
+
+/* Efecto al pasar el mouse sobre el meme */
+.story-meme-img:hover {
+    transform: rotate(0deg) scale(1.05); /* Se endereza y crece un poquito */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* La sombra crece */
+}
+
+
