@@ -839,3 +839,189 @@ footer {
         margin-top: -25px;
     }
 }
+
+/* =========================================
+   NUEVOS ESTILOS PREMIUM (CORRECCIONES)
+   ========================================= */
+
+/* --- 1. PRIMER MENSAJE (Elegante y Limpio) --- */
+.msg-section-elegant {
+    padding: 100px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.elegant-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--brown-gold);
+    margin: 0 auto 30px;
+}
+.msg-text-lg {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+.msg-text-md {
+    font-size: 1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 2. SECCIÓN PADRES (Recuadros sobre Verde) --- */
+.parents-section-luxury {
+    background-color: var(--green-forest); /* Fondo Verde Oscuro */
+    padding: 90px 20px;
+    color: white;
+}
+.parents-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+.parent-box {
+    border: 1px solid rgba(255,255,255, 0.4); /* Borde sutil */
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    background: rgba(255,255,255, 0.05); /* Fondo muy sutil */
+    backdrop-filter: blur(2px);
+}
+.parent-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+.parent-line {
+    width: 40px;
+    height: 1px;
+    background: white;
+    margin: 0 auto 20px;
+    opacity: 0.5;
+}
+.parents-separator {
+    font-size: 3rem;
+    color: rgba(255,255,255, 0.5);
+}
+
+/* Media Query para Padres en PC */
+@media (min-width: 768px) {
+    .parents-grid {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .parents-separator { margin-top: 50px; }
+}
+
+
+/* --- 3. SEGUNDO MENSAJE (Fondo Beige) --- */
+.msg-section-alt {
+    padding: 80px 20px;
+    background-color: #f9f6f2; /* Beige muy suave */
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.msg-text-italic {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--brown-gold);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+
+/* --- 4. MENSAJE FINAL (Collage + Glassmorphism) --- */
+.collage-overlay-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; /* Altura para que luzcan las fotos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+/* El fondo Grid de imágenes */
+.collage-bg-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Una columna ancha, una angosta */
+    gap: 5px;
+    z-index: 0;
+}
+
+/* Foto alta izquierda */
+.c-img-tall {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Columna derecha con 2 fotos */
+.c-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.c-img-short {
+    flex: 1; /* Ocupan mitad y mitad */
+    background-size: cover;
+    background-position: center;
+}
+
+/* CAPA DE CRISTAL (El recuadro transparente) */
+.glass-overlay-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.75); /* Blanco semitransparente */
+    backdrop-filter: blur(8px); /* Efecto borroso detrás */
+    -webkit-backdrop-filter: blur(8px);
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 2px; /* Esquinas sutiles */
+}
+
+/* Texto dentro del cristal */
+.glass-title {
+    font-size: 3.5rem !important;
+    color: var(--brown-gold);
+    margin: 0;
+    line-height: 1.2;
+}
+.glass-line {
+    width: 50px;
+    height: 2px;
+    background: var(--brown-gold);
+    margin: 15px auto 20px;
+}
+.glass-msg {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Ajuste móvil para el collage */
+@media (max-width: 768px) {
+    .collage-overlay-section { min-height: 500px; }
+    .glass-overlay-box { padding: 30px 20px; }
+    .glass-title { font-size: 2.8rem !important; }
+}
+
