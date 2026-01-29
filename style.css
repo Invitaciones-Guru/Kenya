@@ -547,7 +547,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
    ========================================= */
 .rsvp-section { 
     padding: 100px 20px; 
-    background: url('foto3.jpg') center/cover fixed; 
+    background: url('foto3.jpeg') center/cover fixed; 
     display: flex; 
     justify-content: center; 
     position: relative; 
