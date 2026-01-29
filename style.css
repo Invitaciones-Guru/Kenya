@@ -141,7 +141,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .fixed-bg { position: absolute; inset: 0; background-attachment: fixed; background-size: cover; z-index: -1; }
 .story-content { background: white; padding: 60px 40px; max-width: 500px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); width: 100%; }
 .story-est { font-size: 0.8rem; letter-spacing: 3px; display: block; margin: 10px 0 20px; color: var(--brown-gold); }
-.story-text { font-size: 1.1rem; line-height: 1.6; color: #555; }
+.story-text { font-size: 0.8rem; line-height: 1.6; color: #555; }
 .signature { font-size: 1.5rem; color: var(--brown-gold); margin-top: 30px; line-height: 1.5; }
 
 /* ITINERARIO */
@@ -388,7 +388,7 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .icon-svg-md { width: 50px; height: 50px; fill: currentColor; }
 
 .gift-title { 
-    font-size: 1.4rem; 
+    font-size: 1rem; 
     letter-spacing: 2px; 
     margin-bottom: 15px; 
     color: var(--text-dark);
