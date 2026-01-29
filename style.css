@@ -1108,3 +1108,24 @@ footer {
     }
 }
 
+/* LÍNEA DIVISORIA INTELIGENTE (PADRES) */
+.luxury-divider {
+    background-color: white;
+    opacity: 0.4; /* Semitransparente para que se vea fino */
+    
+    /* ESTADO MÓVIL (Celular): Línea Horizontal */
+    width: 150px; 
+    height: 1px;
+    margin: 20px auto; /* Separación arriba y abajo */
+}
+
+/* ESTADO ESCRITORIO (PC): Línea Vertical */
+@media (min-width: 768px) {
+    .luxury-divider {
+        width: 1px;
+        height: 140px; /* Altura de la línea */
+        margin: 0 50px; /* Separación a los lados */
+    }
+}
+
+
