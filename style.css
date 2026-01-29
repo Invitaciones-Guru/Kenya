@@ -124,14 +124,14 @@ body { margin: 0; background: var(--bg-cream); color: var(--text-dark); overflow
 .magazine-counter { margin-top: 80px; margin-bottom: 100px; background: url('foto3.jpeg') center/cover no-repeat fixed; position: relative; padding: 80px 0; display: flex; justify-content: center; align-items: center; }
 .magazine-counter::before { display: none; }
 .relative-box { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.93); width: 90%; max-width: 450px; padding: 40px 20px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center; }
-.mag-header p { font-size: 3rem !important; color: var(--brown-gold); margin: 0; line-height: 1.2; }
+.mag-header p { font-size: 3rem !important; color: var(--brown-gold); margin: 0; line-height: 1.6; padding-bottom: 15px; display: block; }
 .mag-date-display { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 15px 0; width: 100%; }
 .mag-day { font-size: 4.5rem; line-height: 1; color: var(--green-forest); }
 .mag-vertical-line { width: 2px; height: 60px; background: var(--brown-gold); opacity: 0.6; }
 .mag-month-year { display: flex; flex-direction: column; text-align: left; justify-content: center; }
 .mag-month-year span:nth-child(1) { font-size: 1.2rem; color: var(--green-dark); letter-spacing: 2px; line-height: 1; }
 .mag-month-year span:nth-child(2) { font-size: 1rem; color: var(--brown-gold); letter-spacing: 4px; margin-top: 5px; }
-.mag-std p { font-size: 3rem !important; color: var(--green-forest); margin: 10px 0 30px 0; line-height: 3; position: relative; transform: translateX(-15px); }
+.mag-std p { font-size: 3rem !important; color: var(--green-forest); margin: 10px 0 30px 0; line-height: 1.6; padding-bottom: 15px; position: relative; transform: translateX(-15px); }
 .mag-timer { display: flex; justify-content: center; gap: 15px; width: 100%; flex-wrap: wrap; }
 .time-col span { display: block; font-size: 1.5rem; line-height: 1; color: var(--text-dark); font-weight: 500; }
 .time-col small { font-size: 0.6rem; letter-spacing: 1px; opacity: 0.6; color: var(--text-dark); margin-top: 5px; display: block; }
