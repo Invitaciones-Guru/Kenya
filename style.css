@@ -1109,23 +1109,22 @@ footer {
 }
 
 /* LÍNEA DIVISORIA INTELIGENTE (PADRES) */
+/* LÍNEA DIVISORIA (Vertical en celular y PC) */
 .luxury-divider {
     background-color: white;
-    opacity: 0.4; /* Semitransparente para que se vea fino */
+    opacity: 0.4; 
     
-    /* ESTADO MÓVIL (Celular): Línea Horizontal */
-    width: 150px; 
-    height: 1px;
-    margin: 20px auto; /* Separación arriba y abajo */
+    /* --- CAMBIO: AHORA ES VERTICAL SIEMPRE --- */
+    width: 1px;        /* Ancho fino (línea vertical) */
+    height: 60px;      /* Altura en celular (el largo de la línea) */
+    margin: 20px auto; /* Centrado automático */
 }
 
-/* ESTADO ESCRITORIO (PC): Línea Vertical */
+/* Ajuste para PC (La hacemos más alta porque las cajas son más grandes) */
 @media (min-width: 768px) {
     .luxury-divider {
-        width: 1px;
-        height: 140px; /* Altura de la línea */
-        margin: 0 50px; /* Separación a los lados */
+        height: 140px;  /* Más alta en pantalla grande */
+        margin: 0 50px; /* Margen a los lados en vez de arriba/abajo */
     }
 }
-
 
