@@ -1169,3 +1169,108 @@ footer {
 }
 
 
+
+/* =========================================
+   SECCIÓN FOTOS + CITA (DISEÑO SEPARADO)
+   ========================================= */
+
+.gallery-quote-section {
+    padding: 80px 20px;
+    background-color: var(--bg-cream); /* Fondo suave */
+}
+
+/* --- 1. GRID DE FOTOS --- */
+.photos-split-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Izquierda más ancha */
+    gap: 10px;
+    height: 450px; /* Altura total del collage */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.photo-tall {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.photos-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.photo-short {
+    flex: 1; /* Ocupan 50% cada una */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+/* --- 2. CAJA DE TEXTO (ABAJO) --- */
+.quote-box-bottom {
+    text-align: center;
+    margin-top: 50px; /* Separación de las fotos */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.quote-title {
+    font-size: 3.5rem !important;
+    color: var(--brown-gold);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.quote-line {
+    width: 60px;
+    height: 2px;
+    background: var(--brown-gold);
+    margin: 15px auto 25px;
+    opacity: 0.3;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.quote-ref {
+    font-size: 0.9rem;
+    color: var(--green-forest);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* --- AJUSTE PARA CELULAR --- */
+@media (max-width: 768px) {
+    .photos-split-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: 300px 300px; /* Altura fija para cada parte */
+        height: auto; /* Altura automática */
+    }
+    
+    .photo-tall {
+        height: 300px; /* Altura de la foto principal */
+    }
+    
+    .photos-right-col {
+        flex-direction: row; /* Poner las 2 pequeñas lado a lado abajo */
+        height: 150px;
+    }
+    
+    .quote-title {
+        font-size: 3rem !important;
+    }
+}
+
