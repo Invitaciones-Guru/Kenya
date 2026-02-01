@@ -1420,3 +1420,14 @@ p {
     object-fit: contain; /* Asegura que el pin se vea completo sin estirarse */
     display: block;
 }
+/* =========================================
+   ESTILO PARA LOS ICONOS DE IMAGEN (PASE Y PIN)
+   ========================================= */
+
+.custom-icon-img {
+    width: 100%;      /* Ocupa todo el ancho del contenedor (50px) */
+    height: 100%;     /* Ocupa todo el alto del contenedor (50px) */
+    object-fit: contain; /* Asegura que la imagen no se recorte ni deforme */
+    display: block;
+}
+
