@@ -1413,3 +1413,10 @@ p {
   word-break: keep-all;
 }
 
+/* Estilo para el nuevo ícono de imagen (pin.jpg) */
+.custom-pin-icon {
+    width: 100%;     /* Ocupa el ancho del contenedor (50px) */
+    height: 100%;    /* Ocupa el alto del contenedor (50px) */
+    object-fit: contain; /* Asegura que el pin se vea completo sin estirarse */
+    display: block;
+}
