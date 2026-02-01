@@ -421,20 +421,21 @@
         <div class="rsvp-wrapper" data-aos="fade-up">
             <h2 class="font-brittany rsvp-title">Confirmación</h2>
             <p class="rsvp-deadline font-tenor">FAVOR DE CONFIRMAR ANTES DEL 1 DE ENERO</p>
-            <form id="rsvpForm" class="rsvp-form">
-                <div class="input-group"><input type="text" id="guestName" placeholder="Nombre completo" class="font-tenor" required></div>
-                <div class="input-group">
-                    <select id="attendance" class="font-tenor" required>
-                        <option value="" disabled selected>¿Asistirás?</option>
-                        <option value="si">¡Sí, ahí estaré!</option>
-                        <option value="no">Lo siento, no podré</option>
-                    </select>
-                </div>
-                <div class="row-group"><input type="number" id="numGuests" placeholder="No. Personas" min="1" class="font-tenor" required></div>
-                <button type="submit" class="btn-gold font-tenor">ENVIAR CONFIRMACIÓN</button>
-            </form>
+            
+            <p class="font-poppins" style="margin-bottom: 40px; color: #555; line-height: 1.8;">
+                Para nosotros es muy importante compartir este día contigo.<br>
+                Agradecemos confirmar tu asistencia vía telefónica al siguiente número:
+            </p>
+
+            <div class="rsvp-call-box">
+                <a href="tel:+528112345678" class="btn-gold font-tenor btn-call-single">
+                    LLAMAR PARA CONFIRMAR
+                </a>
+            </div>
+
         </div>
     </section>
+
 
     <footer><p class="font-tenor">Hecho con amor | Kenya & David 2026</p></footer>
 
